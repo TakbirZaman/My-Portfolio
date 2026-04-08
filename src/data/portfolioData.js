@@ -1,3 +1,9 @@
+
+import heroImg from "../assets/takbir2.jpg";
+import aboutImg from "../assets/takbir1.jpg";
+import galleryImg from "../assets/takbir.jpg";
+import resumePdf from "../assets/TAKBIRZAMANBHUIYAN_Resume.pdf";
+
 export const personalInfo = {
   name: "Takbir Zaman Bhuiyan",
   title: "Software Engineer (Backend & ML Systems)",
