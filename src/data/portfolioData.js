@@ -9,11 +9,11 @@ export const personalInfo = {
   website: "https://takbirzaman.github.io",
   github: "https://github.com/TakbirZaman",
   linkedin: "https://linkedin.com/in/takbirzaman",
-  resumeUrl: "/TAKBIRZAMANBHUIYAN_Resume.pdf",
+ resumeUrl: "./TAKBIRZAMANBHUIYAN_Resume.pdf",
   photos: {
-    hero: "/takbir2.jpg",
-    about: "/takbir1.jpg",
-    gallery: "/takbir.jpg",
+    hero: "./takbir2.jpg",
+    about: "./takbir1.jpg",
+    gallery: "./takbir.jpg",
   },
 };
 
