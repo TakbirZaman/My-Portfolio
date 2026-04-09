@@ -2,7 +2,7 @@
 import heroImg from "../assets/takbir2.jpg";
 import aboutImg from "../assets/takbir1.jpg";
 import galleryImg from "../assets/takbir.jpg";
-import resumePdf from "../assets/TAKBIRZAMANBHUIYAN_Resume.pdf";
+//import resumePdf from "../assets/resume.pdf";
 
 export const personalInfo = {
   name: "Takbir Zaman Bhuiyan",
@@ -15,11 +15,11 @@ export const personalInfo = {
   website: "https://takbirzaman.github.io",
   github: "https://github.com/TakbirZaman",
   linkedin: "https://linkedin.com/in/takbirzaman",
- resumeUrl: "./TAKBIRZAMANBHUIYAN_Resume.pdf",
+resumeUrl: "/TAKBIRZAMANBHUIYAN_Resume.pdf",
   photos: {
-    hero: "./takbir2.jpg",
-    about: "./takbir1.jpg",
-    gallery: "./takbir.jpg",
+    hero: heroImg,
+    about: aboutImg,
+    gallery: galleryImg,
   },
 };
 
