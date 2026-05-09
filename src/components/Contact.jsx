@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Send, CheckCircle2 } from "lucide-react";
-// Added FaFacebookF to the imports
+import { SiLeetcode } from "react-icons/si";
 import { FaGithub, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import { personalInfo } from "../data/portfolioData";
 
@@ -31,6 +31,15 @@ const contactLinks = [
     color: "bg-blue-50 text-blue-600 hover:bg-blue-100",
     border: "border-blue-200",
   },
+  {
+    icon: SiLeetcode,
+    label: "LeetCode",
+    value: "leetcode.com/u/takbirzaman",
+    href: "https://leetcode.com/u/takbirzaman/",
+    color: "bg-orange-50 text-orange-500 hover:bg-orange-100",
+    border: "border-orange-200",
+  },
+  
   {
     icon: FaFacebookF,
     label: "Facebook",

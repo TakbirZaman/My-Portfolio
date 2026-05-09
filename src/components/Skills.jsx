@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { skillTags } from "../data/portfolioData";
+import { SiLeetcode } from "react-icons/si";
 
 const categoryColors = {
   "Languages": "bg-primary-50 text-primary-700 border-primary-200 hover:bg-primary-100",
@@ -99,6 +100,30 @@ export default function Skills() {
           ))}
         </div>
 
+        {/* Coding Profiles */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 mt-8"
+        >
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-xl">🏆</span>
+            <h3 className="font-display font-semibold text-slate-800">Coding Profiles</h3>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="https://leetcode.com/u/takbirzaman/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl border border-orange-200 bg-orange-50 text-orange-600 hover:bg-orange-100 transition-all duration-150 font-medium text-sm"
+            >
+              <SiLeetcode size={16} />
+              LeetCode
+            </a>
+          </div>
+        </motion.div>
+
         {/* Bottom note */}
         <motion.p
           initial={{ opacity: 0 }}
@@ -106,7 +131,7 @@ export default function Skills() {
           transition={{ delay: 0.6 }}
           className="text-center text-slate-400 text-sm mt-8"
         >
-          Always learning — currently exploring advanced LLM fine-tuning and cloud deployments.
+          Always learning — currently exploring workflow automation with n8n and cloud deployments.
         </motion.p>
       </div>
     </section>

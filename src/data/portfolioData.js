@@ -6,7 +6,7 @@ import galleryImg from "../assets/takbir.jpg";
 
 export const personalInfo = {
   name: "Takbir Zaman Bhuiyan",
-  title: "Software Engineer (Backend & ML Systems)",
+  title: "Software Engineer (Full-Stack · ML/AI · Automation)",
   tagline: "CSE Graduate · Full-Stack Engineer · Applied ML Researcher",
   bio: "Computer Science graduate from AIUB with a focus on backend engineering and applied machine learning. I design scalable APIs, structured system architectures, and data-driven applications, bridging software engineering with intelligent systems. Experienced in MERN and ASP.NET ecosystems, with research in NLP and computer vision. Currently seeking software engineering roles where I can build performant, production-grade systems.",
   location: "Dhaka, Bangladesh",
@@ -86,14 +86,7 @@ export const experience = [
 ];
 
 export const skills = {
-  Languages: [
-    { name: "C#", level: 90 },
-    { name: "Python", level: 88 },
-    { name: "JavaScript", level: 78 },
-    { name: "SQL", level: 85 },
-    { name: "C++", level: 75 },
-    { name: "PHP", level: 70 },
-  ],
+  
   "Web & Frameworks": [
     { name: "ASP.NET Core", level: 88 },
     { name: "React", level: 78 },
@@ -103,6 +96,24 @@ export const skills = {
     { name: "FastAPI", level: 78 },
     { name: "HTML/CSS", level: 90 },
   ],
+  
+ "ML & AI": [
+    { name: "scikit-learn", level: 80 },
+    { name: "TensorFlow / Keras", level: 78 },
+    { name: "NLP (TF-IDF/DBSCAN)", level: 78 },
+    { name: "LSTM / Autoencoder", level: 75 },
+    { name: "CNN (DenseNet121)", level: 72 },
+    { name: "OpenCV / YuNet", level: 70 },
+  ],
+  Languages: [
+    { name: "C#", level: 90 },
+    { name: "Python", level: 88 },
+    { name: "JavaScript", level: 78 },
+    { name: "SQL", level: 85 },
+    { name: "C++", level: 75 },
+  
+  ],
+
   "Databases & DevOps": [
     { name: "SQL Server", level: 88 },
     { name: "MySQL", level: 82 },
@@ -111,14 +122,7 @@ export const skills = {
     { name: "Postman", level: 82 },
     { name: "Docker", level: 68 },
   ],
-  "ML & AI": [
-    { name: "scikit-learn", level: 80 },
-    { name: "TensorFlow / Keras", level: 78 },
-    { name: "NLP (TF-IDF/DBSCAN)", level: 78 },
-    { name: "LSTM / Autoencoder", level: 75 },
-    { name: "CNN (DenseNet121)", level: 72 },
-    { name: "OpenCV / YuNet", level: 70 },
-  ],
+ 
 };
 
 export const skillTags = {
