@@ -1,4 +1,3 @@
-
 import heroImg from "../assets/takbir2.jpg";
 import aboutImg from "../assets/takbir1.jpg";
 import galleryImg from "../assets/takbir.jpg";
@@ -15,7 +14,7 @@ export const personalInfo = {
   website: "https://takbirzaman.github.io",
   github: "https://github.com/TakbirZaman",
   linkedin: "https://linkedin.com/in/takbirzaman",
-resumeUrl: "/TAKBIRZAMANBHUIYAN_Resume.pdf",
+  resumeUrl: "/TAKBIRZAMANBHUIYAN_Resume.pdf",
   photos: {
     hero: heroImg,
     about: aboutImg,
@@ -25,7 +24,7 @@ resumeUrl: "/TAKBIRZAMANBHUIYAN_Resume.pdf",
 
 export const stats = [
   { label: "CGPA", value: "3.75", suffix: "/4.0" },
-  { label: "Projects Built", value: "9", suffix: "+" },
+  { label: "Projects Built", value: "12", suffix: "+" },
   { label: "Dean's Awards", value: "2", suffix: "×" },
   { label: "Research Projects", value: "4", suffix: "" },
 ];
@@ -64,7 +63,7 @@ export const education = [
       "Science Group",
       "Achieved maximum GPA",
     ],
-  }
+  },
 ];
 
 export const experience = [
@@ -86,7 +85,6 @@ export const experience = [
 ];
 
 export const skills = {
-  
   "Web & Frameworks": [
     { name: "ASP.NET Core", level: 88 },
     { name: "React", level: 78 },
@@ -96,14 +94,14 @@ export const skills = {
     { name: "FastAPI", level: 78 },
     { name: "HTML/CSS", level: 90 },
   ],
-  
- "ML & AI": [
+  "ML & AI": [
     { name: "scikit-learn", level: 80 },
     { name: "TensorFlow / Keras", level: 78 },
     { name: "NLP (TF-IDF/DBSCAN)", level: 78 },
     { name: "LSTM / Autoencoder", level: 75 },
     { name: "CNN (DenseNet121)", level: 72 },
     { name: "OpenCV / YuNet", level: 70 },
+    { name: "Gemini AI / RAG", level: 75 },
   ],
   Languages: [
     { name: "C#", level: 90 },
@@ -111,9 +109,7 @@ export const skills = {
     { name: "JavaScript", level: 78 },
     { name: "SQL", level: 85 },
     { name: "C++", level: 75 },
-  
   ],
-
   "Databases & DevOps": [
     { name: "SQL Server", level: 88 },
     { name: "MySQL", level: 82 },
@@ -121,15 +117,16 @@ export const skills = {
     { name: "Git & GitHub", level: 88 },
     { name: "Postman", level: 82 },
     { name: "Docker", level: 68 },
+    { name: "GitHub Actions", level: 75 },
   ],
- 
 };
 
 export const skillTags = {
   Languages: ["C#", "Python", "JavaScript", "SQL", "C++", "PHP", "Java"],
   "Web & Frameworks": ["ASP.NET Core", "EF Core", "React", "Node.js", "Express.js", "Tailwind CSS", "FastAPI", "HTML/CSS"],
   "Databases & Tools": ["SQL Server", "MySQL", "Oracle DB", "Git", "GitHub", "Postman", "Docker"],
-  "ML & AI": ["TensorFlow", "scikit-learn", "DenseNet121", "EfficientNet-B3", "NLP", "PCA", "Grad-CAM", "OpenCV"],
+  "ML & AI": ["TensorFlow", "scikit-learn", "DenseNet121", "EfficientNet-B3", "NLP", "PCA", "Grad-CAM", "OpenCV", "Gemini AI", "RAG"],
+  "Automation & DevOps": ["GitHub Actions", "n8n", "Streamlit", "Telegram API", "Google Sheets API"],
 };
 
 export const projects = [
@@ -142,26 +139,6 @@ export const projects = [
     live: "https://takbir.gt.tc/ConnectHub/index.php?page=login&i=1",
     github: "https://github.com/TakbirZaman/ConnectHub",
     featured: true,
-  },
-  {
-    title: "Student Attendance Management API",
-    description: "RESTful attendance system built with ASP.NET Core Web API using clean 3-layer architecture. Supports secure CRUD operations, attendance tracking, and efficient student-class mapping with optimized database persistence.",
-    tech: ["C#", "ASP.NET Core", "EF Core", "SQL"],
-    category: "Backend API",
-    color: "violet",
-    live: "#",
-    github: "https://github.com/TakbirZaman/Student_Attendance_Management",
-    featured: false,
-  },
-  {
-    title: "Face Recognition System",
-    description: "Real-time face recognition system using YuNet for detection and SFace embeddings for identification. Implements cosine similarity matching with a custom JS–Python bridge for live capture and processing, optimized for low-latency inference and cloud sync.",
-    tech: ["Python", "OpenCV", "YuNet", "SFace"],
-    category: "Computer Vision",
-    color: "teal",
-    live: "#",
-    github: "https://github.com/TakbirZaman",
-    featured: false,
   },
   {
     title: "RidePrice BD — Fare Estimator",
@@ -182,6 +159,56 @@ export const projects = [
     featured: true,
     live: "https://TakbirZaman.github.io/beatMEE/",
     github: "https://github.com/TakbirZaman/beatMEE",
+  },
+  {
+    title: "RAG Chatbot — Document Q&A",
+    description: "Retrieval-Augmented Generation chatbot that answers questions from uploaded PDFs. Implements TF-IDF cosine similarity search in pure Python for chunk retrieval, powered by Gemini LLM for accurate, context-grounded answers.",
+    tech: ["Python", "Streamlit", "Gemini AI", "RAG"],
+    category: "ML / AI",
+    color: "indigo",
+    live: "https://takbirzaman-rag-chatbot.streamlit.app",
+    github: "https://github.com/TakbirZaman/rag-chatbot",
+    featured: false,
+  },
+  {
+    title: "Email Agent — AI Task Automation",
+    description: "Autonomous multi-step AI agent that reads emails, analyzes content using Gemini, and auto-generates prioritized task lists. Runs on a daily schedule via GitHub Actions with zero manual effort.",
+    tech: ["Python", "Gemini AI", "GitHub Actions", "Automation"],
+    category: "ML / AI",
+    color: "teal",
+    live: "https://github.com/TakbirZaman/email-agent/actions",
+    github: "https://github.com/TakbirZaman/email-agent",
+    featured: false,
+  },
+  {
+    title: "Job Alert & Tracker Automation",
+    description: "End-to-end automation that fetches remote job listings daily, scores them with a custom JavaScript algorithm for junior-friendliness and tech stack match, sends instant Telegram alerts for top matches, and logs everything to Google Sheets.",
+    tech: ["n8n", "JavaScript", "Telegram API", "Google Sheets"],
+    category: "ML / AI",
+    color: "amber",
+    live: "#",
+    github: "https://github.com/TakbirZaman",
+    featured: false,
+  },
+  {
+    title: "Student Attendance Management API",
+    description: "RESTful attendance system built with ASP.NET Core Web API using clean 3-layer architecture. Supports secure CRUD operations, attendance tracking, and efficient student-class mapping with optimized database persistence.",
+    tech: ["C#", "ASP.NET Core", "EF Core", "SQL"],
+    category: "Backend API",
+    color: "violet",
+    live: "#",
+    github: "https://github.com/TakbirZaman/Student_Attendance_Management",
+    featured: false,
+  },
+  {
+    title: "Face Recognition System",
+    description: "Real-time face recognition system using YuNet for detection and SFace embeddings for identification. Implements cosine similarity matching with a custom JS–Python bridge for live capture and processing, optimized for low-latency inference and cloud sync.",
+    tech: ["Python", "OpenCV", "YuNet", "SFace"],
+    category: "Computer Vision",
+    color: "teal",
+    live: "#",
+    github: "https://github.com/TakbirZaman",
+    featured: false,
   },
   {
     title: "Indoor Hospital Management System",
@@ -261,6 +288,6 @@ export const research = [
 ];
 
 export const achievements = [
-  "Dean’s Award (2×)",
+  "Dean's Award (2×)",
   "Cisco IT Essentials Certification",
 ];

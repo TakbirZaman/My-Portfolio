@@ -9,6 +9,7 @@ const categoryColors = {
   "Web & Frameworks": "bg-teal-50 text-teal-700 border-teal-200 hover:bg-teal-100",
   "Databases & Tools": "bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100",
   "ML & AI": "bg-violet-50 text-violet-700 border-violet-200 hover:bg-violet-100",
+  "Automation & DevOps": "bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100",
 };
 
 const categoryIcons = {
@@ -16,6 +17,7 @@ const categoryIcons = {
   "Web & Frameworks": "🌐",
   "Databases & Tools": "🛢️",
   "ML & AI": "🤖",
+  "Automation & DevOps": "⚙️",
 };
 
 export default function Skills() {
@@ -131,7 +133,7 @@ export default function Skills() {
           transition={{ delay: 0.6 }}
           className="text-center text-slate-400 text-sm mt-8"
         >
-          Always learning — currently exploring workflow automation with n8n and cloud deployments.
+          Always learning — currently exploring agentic AI systems and workflow automation with n8n and GitHub Actions.
         </motion.p>
       </div>
     </section>
