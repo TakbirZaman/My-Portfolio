@@ -5,9 +5,9 @@ import galleryImg from "../assets/takbir.jpg";
 
 export const personalInfo = {
   name: "Takbir Zaman Bhuiyan",
-  title: "Software Engineer (Full-Stack · ML/AI · Automation)",
-  tagline: "CSE Graduate · Full-Stack Engineer · AI & Automation Developer",
-  bio: "Computer Science graduate from AIUB with professional experience in full-stack engineering and AI-driven automation. I design scalable APIs, system architectures, and intelligent automation workflows for production environments. Experienced in MERN, ASP.NET, and n8n ecosystems, with research in NLP and computer vision. Currently building end-to-end applications and automation solutions in a startup setting, seeking software engineering roles to deliver performant, production-grade systems.",
+  title: "CSE Student | Aspiring MERN Stack Developer",
+  tagline: "Computer Science & Engineering · Full-Stack Development · AI/ML",
+  bio: "Computer Science & Engineering student at AIUB (CGPA: 3.75), currently completing my thesis and an internship at NN Services & Engineering Ltd. Passionate about full-stack web development with a goal of becoming a MERN stack developer — building scalable APIs with Node.js and dynamic UIs with React. Actively looking for entry-level opportunities in software engineering and AI/ML.",
   location: "Dhaka, Bangladesh",
   email: "takbirzamanbhuiyan@gmail.com",
   phone: "+8801631107100",
