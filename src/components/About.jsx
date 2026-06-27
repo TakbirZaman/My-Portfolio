@@ -5,9 +5,9 @@ import { personalInfo } from "../data/portfolioData";
 
 const highlights = [
   { icon: GraduationCap, label: "AIUB — BSc CSE", sub: "CGPA 3.75 / 4.0", color: "text-primary-600 bg-primary-50" },
-  { icon: Briefcase, label: "NNSEL Intern", sub: "Feb – May 2025", color: "text-teal-600 bg-teal-50" },
-  { icon: Code2, label: "Backend + ML", sub: "Systems, APIs, AI", color: "text-violet-600 bg-violet-50" },
-  { icon: MapPin, label: "Dhaka, Bangladesh", sub: "Open to remote", color: "text-amber-600 bg-amber-50" },
+  { icon: Briefcase, label: "WebtrixLab + NNSEL", sub: "AI workflows & software engineering", color: "text-teal-600 bg-teal-50" },
+  { icon: Code2, label: "Real Product Work", sub: "React • Node • Python", color: "text-violet-600 bg-violet-50" },
+  { icon: MapPin, label: "Dhaka, Bangladesh", sub: "Remote-ready", color: "text-amber-600 bg-amber-50" },
 ];
 
 export default function About() {
@@ -79,18 +79,18 @@ export default function About() {
           >
             <p className="text-primary-600 font-semibold text-sm tracking-widest uppercase mb-3">About Me</p>
             <h2 className="section-title mb-5">
-              Scalable Backend Systems.<br />
-              <span className="gradient-text">Aspiring MERN Developer.</span>
+              Building practical products with<br />
+              <span className="gradient-text">AI, backend systems, and modern web apps.</span>
             </h2>
 
             <p className="text-slate-600 leading-relaxed mb-4">
-              I am a Computer Science & Engineering student at <strong className="text-slate-800">AIUB</strong> (CGPA: <strong className="text-primary-600">3.75</strong>), currently completing my thesis and an internship at <strong className="text-slate-800">NN Services & Engineering Ltd</strong>.
+              I’m a Computer Science & Engineering student at <strong className="text-slate-800">AIUB</strong> (CGPA: <strong className="text-primary-600">3.75</strong>) who enjoys turning ideas into working software. My recent work spans AI automation, machine learning apps, and full-stack web platforms that solve real problems.
             </p>
             <p className="text-slate-600 leading-relaxed mb-6">
-              My primary focus is on full-stack web development with the goal of becoming a MERN stack developer. I leverage my foundation in structured backend design and N-layer architecture to build scalable APIs with Node.js and dynamic user interfaces with React. I am passionate about writing clean, maintainable code and solving complex problems beyond basic CRUD operations.
+              At <strong className="text-slate-800">WebtrixLab</strong>, I build AI-driven workflows and end-to-end web applications, while my internship at <strong className="text-slate-800">NN Services & Engineering Ltd</strong> strengthened my skills in React, Node.js, and REST APIs. I’ve also developed projects like <strong className="text-slate-800">RidePrice BD</strong>, <strong className="text-slate-800">Task Manager</strong>, <strong className="text-slate-800">Construction Tracker</strong>, and <strong className="text-slate-800">ConnectHub</strong>.
             </p>
             <p className="text-slate-600 leading-relaxed mb-8">
-              Alongside web development, I have a strong, active interest in Artificial Intelligence and Machine Learning. Having built data-driven Python projects, I am actively looking for entry-level opportunities where I can contribute as a software engineer while working more deeply in the AI/ML field.
+              I’m especially interested in building systems that combine strong backend architecture with practical AI/ML features — from intelligent automations to data-driven user experiences. I’m actively looking for opportunities where I can contribute as a software engineer and grow further in the AI space.
             </p>
 
             {/* Highlights grid */}
