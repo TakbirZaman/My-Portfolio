@@ -65,8 +65,21 @@ export const education = [
     ],
   },
 ];
-
 export const experience = [
+  {
+    role: "AI Automation & Full Stack Developer",
+    company: "WebtrixLab",
+    location: "Dhaka, Bangladesh",
+    period: "2025 – Present",
+    type: "Part-time",
+    highlights: [
+      "Building and deploying AI automation workflows using n8n for real client use cases",
+      "Developing full-stack web applications from frontend to backend and database",
+      "Managing and growing the official WebtrixLab Facebook page and social media presence",
+      "Contributing to client project delivery across web development and automation services",
+    ],
+    tech: ["Next.js", "React", "Node.js", "Express", "MongoDB", "n8n", "REST APIs", "Git & GitHub"],
+  },
   {
     role: "Software Engineer Intern",
     company: "NNSEL",
@@ -76,14 +89,12 @@ export const experience = [
     highlights: [
       "Developed and maintained responsive React-based frontend components",
       "Built and integrated RESTful APIs using Node.js and Express",
-
       "Reduced frontend load time by optimizing component rendering and API calls",
       "Collaborated in agile sprint cycles, code reviews, and team stand-ups",
     ],
     tech: ["React", "Node.js", "Express", "REST APIs", "PostgreSQL", "Git & GitHub"],
   },
 ];
-
 export const skills = {
   "Web & Frameworks": [
     { name: "ASP.NET Core", level: 88 },
