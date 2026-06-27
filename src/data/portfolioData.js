@@ -6,8 +6,8 @@ import galleryImg from "../assets/takbir.jpg";
 export const personalInfo = {
   name: "Takbir Zaman Bhuiyan",
   title: "Software Engineer (Full-Stack · ML/AI · Automation)",
-  tagline: "CSE Graduate · Full-Stack Engineer · Applied ML Researcher",
-  bio: "Computer Science graduate from AIUB with a focus on backend engineering and applied machine learning. I design scalable APIs, structured system architectures, and data-driven applications, bridging software engineering with intelligent systems. Experienced in MERN and ASP.NET ecosystems, with research in NLP and computer vision. Currently seeking software engineering roles where I can build performant, production-grade systems.",
+  tagline: "CSE Graduate · Full-Stack Engineer · AI & Automation Developer",
+  bio: "Computer Science graduate from AIUB with professional experience in full-stack engineering and AI-driven automation. I design scalable APIs, system architectures, and intelligent automation workflows for production environments. Experienced in MERN, ASP.NET, and n8n ecosystems, with research in NLP and computer vision. Currently building end-to-end applications and automation solutions in a startup setting, seeking software engineering roles to deliver performant, production-grade systems.",
   location: "Dhaka, Bangladesh",
   email: "takbirzamanbhuiyan@gmail.com",
   phone: "+8801631107100",
@@ -24,7 +24,7 @@ export const personalInfo = {
 
 export const stats = [
   { label: "CGPA", value: "3.75", suffix: "/4.0" },
-  { label: "Projects Built", value: "13", suffix: "+" },
+  { label: "Projects Built", value: "15", suffix: "+" },
   { label: "Dean's Awards", value: "2", suffix: "×" },
   { label: "Research Projects", value: "4", suffix: "" },
 ];
@@ -75,7 +75,7 @@ export const experience = [
     highlights: [
       "Building and deploying AI automation workflows using n8n for real client use cases",
       "Developing full-stack web applications from frontend to backend and database",
-      "Managing and growing the official WebtrixLab Facebook page and social media presence",
+      "Building automated content pipelines and data-driven growth strategies for digital brand presence",
       "Contributing to client project delivery across web development and automation services",
     ],
     tech: ["Next.js", "React", "Node.js", "Express", "MongoDB", "n8n", "REST APIs", "Git & GitHub"],
@@ -107,7 +107,7 @@ export const skills = {
   ],
   "ML & AI": [
     { name: "Gemini AI / RAG", level: 75 },
-    {name: "n8n", "RAG", "Gemini AI" , level: 80},  
+    { name: "n8n", level: 75 },
     { name: "scikit-learn", level: 80 },
     { name: "TensorFlow / Keras", level: 78 },
     { name: "NLP (TF-IDF/DBSCAN)", level: 78 },
@@ -132,14 +132,21 @@ export const skills = {
     { name: "Docker", level: 68 },
     { name: "GitHub Actions", level: 75 },
   ],
+  "AI Tools & Assistants": [
+    { name: "Claude", level: 88 },
+    { name: "ChatGPT", level: 85 },
+    { name: "Gemini", level: 82 },
+    { name: "OpenCode", level: 78 },
+    { name: "Lovable", level: 72 },
+  ],
 };
-
 export const skillTags = {
   Languages: ["C#", "Python", "JavaScript", "SQL", "C++", "PHP", "Java"],
   "Web & Frameworks": ["ASP.NET Core", "EF Core", "React", "Node.js", "Express.js", "Tailwind CSS", "FastAPI", "HTML/CSS"],
   "Databases & Tools": ["SQL Server", "MySQL", "Oracle DB", "Git", "GitHub", "Postman", "Docker"],
   "ML & AI": ["TensorFlow", "scikit-learn", "DenseNet121", "EfficientNet-B3", "NLP", "PCA", "Grad-CAM", "OpenCV", "Gemini AI", "RAG"],
   "Automation & DevOps": ["GitHub Actions", "n8n", "Streamlit", "Telegram API", "Google Sheets API"],
+  "AI Tools & Assistants": ["Claude", "ChatGPT", "Gemini", "OpenCode", "Lovable"],
 };
 
 export const projects = [
