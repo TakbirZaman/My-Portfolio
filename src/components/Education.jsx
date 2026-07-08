@@ -1,7 +1,7 @@
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import { GraduationCap, Award, Calendar, MapPin } from "lucide-react";
-import { education } from "../data/portfolioData";
+import { GraduationCap, Award, Calendar, MapPin, Trophy } from "lucide-react";
+import { education, achievements, personalInfo } from "../data/portfolioData";
 
 export default function Education() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -98,6 +98,51 @@ export default function Education() {
               </div>
             </motion.div>
           ))}
+
+          {/* Achievements */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="card p-8 mt-8 relative overflow-hidden"
+          >
+            <div className="absolute top-0 left-0 w-48 h-48 bg-gradient-to-br from-amber-50 via-primary-50 to-transparent rounded-br-full" />
+
+            <div className="relative z-10 grid sm:grid-cols-[auto,1fr] gap-6 items-center">
+              {/* Photo */}
+              <div className="w-40 h-40 sm:w-44 sm:h-44 rounded-3xl overflow-hidden border-4 border-white shadow-xl shrink-0 mx-auto sm:mx-0">
+                <img
+                  src={personalInfo.photos.deansAward}
+                  alt="Takbir Zaman with his Dean's Award"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.parentElement.classList.add("bg-gradient-to-br", "from-amber-100", "to-primary-100");
+                    e.target.style.display = "none";
+                  }}
+                />
+              </div>
+
+              {/* Achievements list */}
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-9 h-9 rounded-xl bg-amber-50 flex items-center justify-center">
+                    <Trophy size={17} className="text-amber-500" />
+                  </div>
+                  <h3 className="font-display text-lg font-bold text-slate-900">Achievements</h3>
+                </div>
+                <div className="space-y-2.5">
+                  {achievements.map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-amber-50 flex items-center justify-center shrink-0">
+                        <Award size={11} className="text-amber-500" />
+                      </div>
+                      <span className="text-sm font-semibold text-amber-700">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

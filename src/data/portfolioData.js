@@ -1,13 +1,14 @@
 import heroImg from "../assets/takbir2.jpg";
 import aboutImg from "../assets/takbir1.jpg";
 import galleryImg from "../assets/takbir.jpg";
+import deansAwardImg from "../assets/deansaward.jpg";
 //import resumePdf from "../assets/resume.pdf";
 
 export const personalInfo = {
   name: "Takbir Zaman Bhuiyan",
-  title: "CSE Student | Aspiring MERN Stack Developer",
+  title: "CSE Graduate | Full-Stack Developer & AI/Automation Enthusiast",
   tagline: "Computer Science & Engineering · Full-Stack Development · AI/ML",
-  bio: "Computer Science & Engineering student at AIUB (CGPA: 3.75), currently completing my thesis and an internship at NN Services & Engineering Ltd. Passionate about full-stack web development with a goal of becoming a MERN stack developer — building scalable APIs with Node.js and dynamic UIs with React. Actively looking for entry-level opportunities in software engineering and AI/ML.",
+  bio: "Computer Science & Engineering graduate from AIUB (CGPA: 3.75), with hands-on experience across full-stack web development and AI-powered automation. Currently building AI-driven workflows and web applications at WebtrixLab, with prior experience as a Software Engineer Intern at NN Services & Engineering Ltd. Actively looking for full-time opportunities in software engineering and AI/ML.",
   location: "Dhaka, Bangladesh",
   email: "takbirzamanbhuiyan@gmail.com",
   phone: "+8801631107100",
@@ -19,6 +20,7 @@ export const personalInfo = {
     hero: heroImg,
     about: aboutImg,
     gallery: galleryImg,
+    deansAward: deansAwardImg,
   },
 };
 
@@ -151,6 +153,17 @@ export const skillTags = {
 
 export const projects = [
   {
+    title: "Dhaka Traffic Predictor",
+    description:
+      "AI-integrated congestion prediction platform for Dhaka traffic routes. Combines crowd-sourced reports and historical aggregation with Gemini-generated natural-language explanations of why a route is congested — not just a score. Features Redis caching + BullMQ job queuing, JWT auth with refresh token rotation, Zod-validated APIs, and a distinctive dark asphalt/rickshaw fare-meter UI.",
+    tech: ["Next.js", "Express", "TypeScript", "MongoDB", "Redis", "Gemini AI"],
+    category: "ML Web App",
+    color: "indigo",
+    live: "#",
+    github: "https://github.com/TakbirZaman/Dhaka-s-traffic-predictor",
+    featured: true,
+  },
+  {
     title: "RidePrice BD — Fare Estimator",
     description:
       "Real-time ride fare estimation system using a regression-based ML model trained on Dhaka transport data. Implements client-side inference for zero-latency predictions, incorporating features like distance, demand, weather, and peak-hour multipliers across 76+ locations.",
@@ -204,6 +217,28 @@ export const projects = [
     live: "https://TakbirZaman.github.io/beatMEE/",
     github: "https://github.com/TakbirZaman/beatMEE",
     featured: true,
+  },
+  {
+    title: "Churn Radar — Customer Churn Predictor",
+    description:
+      "Full-stack ML application that predicts customer churn risk in real time, one customer at a time or in bulk from a CSV upload. FastAPI + scikit-learn Random Forest backend (ROC-AUC 0.80) with a Next.js dashboard that auto-generates its input form and validation directly from the model's schema — no frontend changes needed when the underlying dataset changes.",
+    tech: ["Next.js", "TypeScript", "FastAPI", "scikit-learn", "Tailwind CSS"],
+    category: "ML / AI",
+    color: "violet",
+    live: "#",
+    github: "https://github.com/TakbirZaman/Customer-Churn-Predictor",
+    featured: false,
+  },
+  {
+    title: "n8n Automation Workflows",
+    description:
+      "A collection of production n8n workflows covering AI-powered messaging, recruitment automation, job alerts, and email auto-response: a Messenger AI agent with memory, a Facebook Page auto-responder using Gemini Vision for text and image messages, a Gmail HR recruitment pipeline that scores and logs candidates, a scheduled Telegram job-alert bot, and a lightweight LLM-powered email auto-responder.",
+    tech: ["n8n", "Gemini AI", "Gmail API", "Telegram API", "Google Sheets"],
+    category: "ML / AI",
+    color: "amber",
+    live: "#",
+    github: "https://github.com/TakbirZaman/Automation-workflows",
+    featured: false,
   },
   {
     title: "AI Email Auto-Responder",

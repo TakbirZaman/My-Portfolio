@@ -80,17 +80,17 @@ export default function About() {
             <p className="text-primary-600 font-semibold text-sm tracking-widest uppercase mb-3">About Me</p>
             <h2 className="section-title mb-5">
               Building practical products with<br />
-              <span className="gradient-text">AI, backend systems, and modern web apps.</span>
+              <span className="gradient-text">AI, automation, and modern web experiences.</span>
             </h2>
 
             <p className="text-slate-600 leading-relaxed mb-4">
-              I’m a Computer Science & Engineering student at <strong className="text-slate-800">AIUB</strong> (CGPA: <strong className="text-primary-600">3.75</strong>) who enjoys turning ideas into working software. My recent work spans AI automation, machine learning apps, and full-stack web platforms that solve real problems.
+              I'm a Computer Science & Engineering graduate from <strong className="text-slate-800">AIUB</strong> (CGPA: <strong className="text-primary-600">3.75</strong>) who enjoys turning ideas into working software. My recent work spans AI-powered automation, machine learning integrations, and full-stack web platforms that solve real problems.
             </p>
             <p className="text-slate-600 leading-relaxed mb-6">
-              At <strong className="text-slate-800">WebtrixLab</strong>, I build AI-driven workflows and end-to-end web applications, while my internship at <strong className="text-slate-800">NN Services & Engineering Ltd</strong> strengthened my skills in React, Node.js, and REST APIs. I’ve also developed projects like <strong className="text-slate-800">RidePrice BD</strong>, <strong className="text-slate-800">Task Manager</strong>, <strong className="text-slate-800">Construction Tracker</strong>, and <strong className="text-slate-800">ConnectHub</strong>.
+              At <strong className="text-slate-800">WebtrixLab</strong>, I build AI-driven workflows and end-to-end web applications, and my internship at <strong className="text-slate-800">NN Services & Engineering Ltd</strong> sharpened my skills in React, Node.js, and REST APIs. I've also developed projects like <strong className="text-slate-800">RidePrice BD</strong>, <strong className="text-slate-800">Task Manager</strong>, <strong className="text-slate-800">Construction Tracker</strong>, and <strong className="text-slate-800">ConnectHub</strong>.
             </p>
             <p className="text-slate-600 leading-relaxed mb-8">
-              I’m especially interested in building systems that combine strong backend architecture with practical AI/ML features — from intelligent automations to data-driven user experiences. I’m actively looking for opportunities where I can contribute as a software engineer and grow further in the AI space.
+              I'm especially interested in building interactive, AI-enhanced web experiences — from intelligent automations to data-driven interfaces — and enjoy taking a project from idea to deployment. I'm actively looking for opportunities where I can contribute as a software engineer and grow further in the AI/automation space.
             </p>
 
             {/* Highlights grid */}
