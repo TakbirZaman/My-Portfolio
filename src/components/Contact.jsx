@@ -18,7 +18,7 @@ const contactLinks = [
   {
     icon: FaGithub,
     label: "GitHub",
-    value: "github.com/TakbirZaman",
+    value: personalInfo.github.replace(/https?:\/\//, ""),
     href: personalInfo.github,
     color: "bg-slate-50 text-slate-700 hover:bg-slate-100",
     border: "border-slate-200",
@@ -26,7 +26,7 @@ const contactLinks = [
   {
     icon: FaLinkedinIn,
     label: "LinkedIn",
-    value: "https://www.linkedin.com/in/takbir-zaman-bhuiyan/",
+    value: personalInfo.linkedin.replace(/https?:\/\//, ""),
     href: personalInfo.linkedin,
     color: "bg-blue-50 text-blue-600 hover:bg-blue-100",
     border: "border-blue-200",
@@ -39,7 +39,14 @@ const contactLinks = [
     color: "bg-orange-50 text-orange-500 hover:bg-orange-100",
     border: "border-orange-200",
   },
-  
+  {
+    icon: Globe2,
+    label: "Website",
+    value: personalInfo.website.replace(/https?:\/\//, ""),
+    href: personalInfo.website,
+    color: "bg-slate-50 text-slate-700 hover:bg-slate-100",
+    border: "border-slate-200",
+  },
   {
     icon: FaFacebookF,
     label: "Facebook",
@@ -51,7 +58,7 @@ const contactLinks = [
   {
     icon: MapPin,
     label: "Location",
-    value: "Dhaka, Bangladesh",
+    value: personalInfo.location,
     href: null,
     color: "bg-teal-50 text-teal-600",
     border: "border-teal-200",
