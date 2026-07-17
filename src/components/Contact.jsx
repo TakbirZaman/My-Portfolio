@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle2, Phone, Globe2 } from "lucide-react";
 import { SiLeetcode } from "react-icons/si";
 import { FaGithub, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import { personalInfo } from "../data/portfolioData";
@@ -10,8 +10,8 @@ const contactLinks = [
   {
     icon: Mail,
     label: "Email",
-    value: "takbirzamanbhuiyan@gmail.com",
-    href: "mailto:takbirzamanbhuiyan@gmail.com",
+    value: personalInfo.email,
+    href: `mailto:${personalInfo.email}`,
     color: "bg-primary-50 text-primary-600 hover:bg-primary-100",
     border: "border-primary-200",
   },
@@ -26,7 +26,7 @@ const contactLinks = [
   {
     icon: FaLinkedinIn,
     label: "LinkedIn",
-    value: "linkedin.com/in/takbirzaman",
+    value: "https://www.linkedin.com/in/takbir-zaman-bhuiyan/",
     href: personalInfo.linkedin,
     color: "bg-blue-50 text-blue-600 hover:bg-blue-100",
     border: "border-blue-200",
