@@ -14,7 +14,7 @@ export const personalInfo = {
   phone: "+8801631107100",
   website: "https://takbirzaman.github.io",
   github: "https://github.com/TakbirZaman",
-  linkedin: "https://linkedin.com/in/takbirzaman",
+  linkedin: "https://www.linkedin.com/in/takbir-zaman-bhuiyan/",
   resumeUrl: "/TAKBIRZAMANBHUIYAN_Resume.pdf",
   photos: {
     hero: heroImg,
