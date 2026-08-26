@@ -8,14 +8,14 @@ export const personalInfo = {
   name: "Takbir Zaman Bhuiyan",
   title: "CSE Graduate | Full-Stack Developer & AI/Automation Enthusiast",
   tagline: "Computer Science & Engineering · Full-Stack Development · AI/ML",
-  bio: "Computer Science & Engineering graduate from AIUB (CGPA: 3.75), with hands-on experience across full-stack web development and AI-powered automation. Currently building AI-driven workflows and web applications at WebtrixLab, with prior experience as a Software Engineer Intern at NN Services & Engineering Ltd. Actively looking for full-time opportunities in software engineering and AI/ML.",
+  bio: "Computer Science & Engineering graduate from AIUB (CGPA: 3.76), with hands-on experience across full-stack web development and AI-powered automation. Currently building AI-driven workflows and web applications at WebtrixLab, with prior experience as a Software Engineer Intern at NN Services & Engineering Ltd. Actively looking for full-time opportunities in software engineering and AI/ML.",
   location: "Dhaka, Bangladesh",
   email: "takbirzamanbhuiyan@gmail.com",
   phone: "+8801631107100",
   website: "https://takbirzaman.github.io",
   github: "https://github.com/TakbirZaman",
   linkedin: "https://www.linkedin.com/in/takbir-zaman-bhuiyan/",
-  resumeUrl: "/TAKBIRZAMANBHUIYAN_Resume.pdf",
+  resumeUrl: "/TakbirZamanBhuiyan_Resume.pdf",
   photos: {
     hero: heroImg,
     about: aboutImg,
@@ -25,7 +25,7 @@ export const personalInfo = {
 };
 
 export const stats = [
-  { label: "CGPA", value: "3.75", suffix: "/4.0" },
+  { label: "CGPA", value: "3.76", suffix: "/4.0" },
   { label: "Projects Built", value: "15", suffix: "+" },
   { label: "Dean's Awards", value: "2", suffix: "×" },
   { label: "Research Projects", value: "4", suffix: "" },
@@ -36,9 +36,10 @@ export const education = [
     degree: "BSc in Computer Science & Engineering",
     institution: "American International University-Bangladesh (AIUB)",
     location: "Dhaka, Bangladesh",
-    period: "2022 – Present",
-    cgpa: "3.75 / 4.0",
+    period: "2022 – 2026 · Graduated",
+    cgpa: "3.76 / 4.0",
     highlights: [
+      "Graduated — Class of 2026",
       "Dean's Award – Fall 2023–24",
       "Dean's Award – Fall 2024–25",
       "Relevant Coursework: Data Structures & Algorithms, Machine Learning, Computer Vision, Database Systems, Software Engineering, Artificial Intelligence",

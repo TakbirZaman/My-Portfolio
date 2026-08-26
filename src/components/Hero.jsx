@@ -118,7 +118,7 @@ export default function Hero() {
                 className="absolute -right-4 top-8 bg-white rounded-2xl shadow-lg border border-slate-100 px-4 py-3"
               >
                 <p className="text-xs text-slate-400 font-medium">CGPA</p>
-                <p className="text-2xl font-display font-bold text-primary-600">3.75</p>
+                <p className="text-2xl font-display font-bold text-primary-600">3.76</p>
                 <p className="text-xs text-slate-400">/ 4.0</p>
               </motion.div>
 

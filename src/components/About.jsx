@@ -4,7 +4,7 @@ import { MapPin, GraduationCap, Briefcase, Code2 } from "lucide-react";
 import { personalInfo } from "../data/portfolioData";
 
 const highlights = [
-  { icon: GraduationCap, label: "AIUB — BSc CSE", sub: "CGPA 3.75 / 4.0", color: "text-primary-600 bg-primary-50" },
+  { icon: GraduationCap, label: "AIUB — BSc CSE", sub: "CGPA 3.76 / 4.0", color: "text-primary-600 bg-primary-50" },
   { icon: Briefcase, label: "WebtrixLab + NNSEL", sub: "AI workflows & software engineering", color: "text-teal-600 bg-teal-50" },
   { icon: Code2, label: "Real Product Work", sub: "React • Node • Python", color: "text-violet-600 bg-violet-50" },
   { icon: MapPin, label: "Dhaka, Bangladesh", sub: "Remote-ready", color: "text-amber-600 bg-amber-50" },
@@ -84,7 +84,7 @@ export default function About() {
             </h2>
 
             <p className="text-slate-600 leading-relaxed mb-4">
-              I'm a Computer Science & Engineering graduate from <strong className="text-slate-800">AIUB</strong> (CGPA: <strong className="text-primary-600">3.75</strong>) who enjoys turning ideas into working software. My recent work spans AI-powered automation, machine learning integrations, and full-stack web platforms that solve real problems.
+              I'm a Computer Science & Engineering graduate from <strong className="text-slate-800">AIUB</strong> (CGPA: <strong className="text-primary-600">3.76</strong>) who enjoys turning ideas into working software. My recent work spans AI-powered automation, machine learning integrations, and full-stack web platforms that solve real problems.
             </p>
             <p className="text-slate-600 leading-relaxed mb-6">
               At <strong className="text-slate-800">WebtrixLab</strong>, I build AI-driven workflows and end-to-end web applications, and my internship at <strong className="text-slate-800">NN Services & Engineering Ltd</strong> sharpened my skills in React, Node.js, and REST APIs. I've also developed projects like <strong className="text-slate-800">RidePrice BD</strong>, <strong className="text-slate-800">Task Manager</strong>, <strong className="text-slate-800">Construction Tracker</strong>, and <strong className="text-slate-800">ConnectHub</strong>.

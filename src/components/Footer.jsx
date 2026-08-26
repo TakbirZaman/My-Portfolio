@@ -53,7 +53,7 @@ export default function Footer() {
 
         <div className="border-t border-slate-800 mt-8 pt-6 text-center text-sm">
           <p>
-            © {year} Takbir Zaman Bhuiyan· Built with{" "}
+            © {year} Takbir Zaman Bhuiyan · Built with{" "}
             <span className="text-red-400 inline-flex items-center gap-0.5">
               <FaHeart size={12} />
             </span>{" "}

@@ -3,6 +3,14 @@ import { motion } from "framer-motion";
 import { GraduationCap, Award, Calendar, MapPin, Trophy } from "lucide-react";
 import { education, achievements, personalInfo } from "../data/portfolioData";
 
+const cgpaPercent = (cgpa) => {
+  const match = cgpa.match(/([\d.]+)\s*\/\s*([\d.]+)/);
+  if (!match) return 100;
+  return Math.min(100, (parseFloat(match[1]) / parseFloat(match[2])) * 100);
+};
+
+const isAwardItem = (item) => /Dean's Award|Graduated|maximum GPA/i.test(item);
+
 export default function Education() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
@@ -71,7 +79,7 @@ export default function Education() {
                   <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
-                      animate={inView ? { width: "93.75%" } : {}}
+                      animate={inView ? { width: `${cgpaPercent(edu.cgpa)}%` } : {}}
                       transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
                       className="h-full bg-gradient-to-r from-primary-500 to-violet-500 rounded-full"
                     />
@@ -80,20 +88,23 @@ export default function Education() {
 
                 {/* Highlights */}
                 <div className="space-y-2.5">
-                  {edu.highlights.map((item, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <div className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${i < 2 ? "bg-amber-50" : "bg-primary-50"}`}>
-                        {i < 2 ? (
-                          <Award size={11} className="text-amber-500" />
-                        ) : (
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary-400" />
-                        )}
+                  {edu.highlights.map((item, i) => {
+                    const award = isAwardItem(item);
+                    return (
+                      <div key={i} className="flex items-start gap-3">
+                        <div className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${award ? "bg-amber-50" : "bg-primary-50"}`}>
+                          {award ? (
+                            <Award size={11} className="text-amber-500" />
+                          ) : (
+                            <div className="w-1.5 h-1.5 rounded-full bg-primary-400" />
+                          )}
+                        </div>
+                        <span className={`text-sm ${award ? "font-semibold text-amber-700" : "text-slate-600"}`}>
+                          {item}
+                        </span>
                       </div>
-                      <span className={`text-sm ${i < 2 ? "font-semibold text-amber-700" : "text-slate-600"}`}>
-                        {item}
-                      </span>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </motion.div>

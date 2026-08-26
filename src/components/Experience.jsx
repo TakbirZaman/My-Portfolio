@@ -139,7 +139,7 @@ export default function Experience() {
             </div>
             <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-700 px-4 py-2.5 rounded-xl text-sm font-medium">
               <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
-              Actively seeking new opportunities — full-time or internship
+              Actively seeking full-time software engineering opportunities
             </div>
           </motion.div>
         </div>

@@ -1,4 +1,4 @@
-# Takbir Zaman BHuiyan— Portfolio 
+# Takbir Zaman Bhuiyan — Portfolio
 
 
 ## Stack used for built
