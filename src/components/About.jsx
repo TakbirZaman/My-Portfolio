@@ -22,13 +22,17 @@ export default function About() {
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
-            className="relative h-[480px]"
+            className="relative h-[480px] max-[380px]:h-[440px]"
           >
             {/* Main photo */}
-            <div className="absolute top-0 left-4 w-56 h-64 rounded-3xl overflow-hidden border-4 border-white shadow-xl">
+            <div className="absolute top-0 left-2 sm:left-4 w-52 sm:w-56 h-60 sm:h-64 rounded-3xl overflow-hidden border-4 border-white shadow-xl">
               <img
                 src={personalInfo.photos.about}
-                alt="Takbir Zaman"
+                alt="Takbir Zaman Bhuiyan portrait"
+                width="224"
+                height="256"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   e.target.parentElement.classList.add("bg-gradient-to-br", "from-indigo-100", "to-violet-100");
@@ -38,10 +42,14 @@ export default function About() {
             </div>
 
             {/* Secondary photo */}
-            <div className="absolute bottom-0 right-4 w-52 h-60 rounded-3xl overflow-hidden border-4 border-white shadow-xl">
+            <div className="absolute bottom-0 right-2 sm:right-4 w-48 sm:w-52 h-56 sm:h-60 rounded-3xl overflow-hidden border-4 border-white shadow-xl">
               <img
                 src={personalInfo.photos.gallery}
-                alt="Takbir Zaman"
+                alt="Takbir collaborating on project"
+                width="208"
+                height="240"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   e.target.parentElement.classList.add("bg-gradient-to-br", "from-teal-100", "to-cyan-100");
@@ -84,13 +92,13 @@ export default function About() {
             </h2>
 
             <p className="text-slate-600 leading-relaxed mb-4">
-              I'm a Computer Science & Engineering graduate from <strong className="text-slate-800">AIUB</strong> (CGPA: <strong className="text-primary-600">3.76</strong>) who enjoys turning ideas into working software. My recent work spans AI-powered automation, machine learning integrations, and full-stack web platforms that solve real problems.
+              I'm a Computer Science & Engineering graduate from <strong className="text-slate-800">AIUB</strong> (CGPA: <strong className="text-primary-600">3.76</strong>) who ships practical products — from ML-backed web apps to AI automation. I focus on clean architecture, measurable impact, and polished UX.
             </p>
             <p className="text-slate-600 leading-relaxed mb-6">
-              At <strong className="text-slate-800">WebtrixLab</strong>, I build AI-driven workflows and end-to-end web applications, and my internship at <strong className="text-slate-800">NN Services & Engineering Ltd</strong> sharpened my skills in React, Node.js, and REST APIs. I've also developed projects like <strong className="text-slate-800">RidePrice BD</strong>, <strong className="text-slate-800">Task Manager</strong>, <strong className="text-slate-800">Construction Tracker</strong>, and <strong className="text-slate-800">ConnectHub</strong>.
+              At <strong className="text-slate-800">WebtrixLab</strong> I build AI-driven workflows (n8n, Gemini) and full-stack apps (Next.js, FastAPI, Node). My internship at <strong className="text-slate-800">NN Services & Engineering Ltd (NNSEL)</strong> focused on React + REST APIs and performance. Recent builds: <strong className="text-slate-800">TechCommerce</strong> (AI e-commerce + PC Builder), <strong className="text-slate-800">Air Canvas</strong> (MediaPipe hand-tracking), <strong className="text-slate-800">RidePrice BD</strong>, <strong className="text-slate-800">Task Manager</strong>, and <strong className="text-slate-800">Construction Tracker</strong>.
             </p>
             <p className="text-slate-600 leading-relaxed mb-8">
-              I'm especially interested in building interactive, AI-enhanced web experiences — from intelligent automations to data-driven interfaces — and enjoy taking a project from idea to deployment. I'm actively looking for opportunities where I can contribute as a software engineer and grow further in the AI/automation space.
+              I love taking an idea from zero to deployed — scoping, building, and iterating with users. Open to <strong className="text-slate-800">Full-Stack / AI Automation</strong> roles (Dhaka, remote) where I can own features and ship fast.
             </p>
 
             {/* Highlights grid */}

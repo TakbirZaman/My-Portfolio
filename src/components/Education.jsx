@@ -28,13 +28,13 @@ export default function Education() {
           <p className="section-subtitle">My academic foundation.</p>
         </motion.div>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto space-y-6">
           {education.map((edu, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.6, delay: idx * 0.12 }}
               className="card p-8 relative overflow-hidden"
             >
               {/* Decorative gradient corner */}
@@ -124,7 +124,11 @@ export default function Education() {
               <div className="w-40 h-40 sm:w-44 sm:h-44 rounded-3xl overflow-hidden border-4 border-white shadow-xl shrink-0 mx-auto sm:mx-0">
                 <img
                   src={personalInfo.photos.deansAward}
-                  alt="Takbir Zaman with his Dean's Award"
+                  alt="Takbir Zaman receiving Dean's Award"
+                  width="176"
+                  height="176"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     e.target.parentElement.classList.add("bg-gradient-to-br", "from-amber-100", "to-primary-100");

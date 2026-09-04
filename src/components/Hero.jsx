@@ -36,7 +36,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p {...fadeUp(0.3)} className="mt-4 text-xl md:text-2xl font-display font-semibold text-slate-700">
-              {personalInfo.title}
+              Full-Stack Developer · AI & Automation
             </motion.p>
 
             <motion.p {...fadeUp(0.4)} className="mt-5 text-slate-500 text-lg leading-relaxed max-w-lg">
@@ -53,10 +53,12 @@ export default function Hero() {
                 href={personalInfo.resumeUrl} 
                 target="_blank" 
                 rel="noopener noreferrer" 
+                download
+                aria-label="Download resume PDF"
                 className="btn-outline"
               >
                 <ExternalLink size={16} />
-                Checkout My Resume
+                Download Resume
               </a>
             </motion.div>
 
@@ -97,10 +99,15 @@ export default function Hero() {
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-400 via-violet-400 to-teal-400 rotate-3 scale-105 opacity-20 blur-sm" />
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-primary-200 to-teal-200 -rotate-2 scale-102" />
 
-              <div className="relative w-72 h-80 md:w-80 md:h-96 rounded-3xl overflow-hidden border-4 border-white shadow-2xl animate-float">
+              <div className="relative w-72 h-80 md:w-80 md:h-96 rounded-3xl overflow-hidden border-4 border-white shadow-2xl motion-safe:animate-float">
                 <img
                   src={personalInfo.photos.hero}
-                  alt="Takbir Zaman"
+                  alt="Takbir Zaman Bhuiyan — Software Engineer"
+                  width="320"
+                  height="384"
+                  fetchPriority="high"
+                  loading="eager"
+                  decoding="async"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     e.target.style.display = "none";

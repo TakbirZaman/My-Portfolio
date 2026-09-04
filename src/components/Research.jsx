@@ -1,7 +1,9 @@
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import { FlaskConical, Tag } from "lucide-react";
+import { FlaskConical, Tag, MessageSquare, Bone, Recycle, Brain } from "lucide-react";
 import { research } from "../data/portfolioData";
+
+const researchIcons = [MessageSquare, Bone, Recycle, Brain];
 
 export default function Research() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -42,9 +44,11 @@ export default function Research() {
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${c.bar}`} />
 
                 {/* Icon */}
-                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center text-2xl mb-4 ${c.bg}`}>
-                  {item.icon}
-                </div>
+                {(() => { const Icon = researchIcons[idx % researchIcons.length]; return (
+                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 ${c.bg} ${c.text}`}>
+                    <Icon size={22} />
+                  </div>
+                );})()}
 
                 <span className={`badge text-xs font-semibold mb-3 border self-start ${c.bg} ${c.text} ${c.border}`}>
                   {item.status}

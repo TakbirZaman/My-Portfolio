@@ -19,11 +19,11 @@ export default function Footer() {
 
           {/* Nav links */}
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
-            {["About", "Skills", "Experience", "Projects", "Research", "Contact"].map((item) => (
+            {["About", "Skills", "Experience", "Projects", "Research", "Education", "Contact"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="hover:text-white transition-colors"
+                className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 rounded"
               >
                 {item}
               </a>

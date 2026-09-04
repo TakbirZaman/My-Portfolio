@@ -49,7 +49,7 @@
   }
 
   .section-padding {
-    @apply py-20 px-4 sm:px-6 lg:px-8;
+    @apply py-16 sm:py-20 px-4 sm:px-6 lg:px-8;
   }
 
   .container-max {
@@ -76,4 +76,18 @@
 ::selection {
   background-color: #e0e7ff;
   color: #4338ca;
+}
+
+/* Focus visible */
+*:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
