@@ -1,13 +1,19 @@
+import { lazy, Suspense } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Experience from "./components/Experience";
-import Projects from "./components/Projects";
-import Research from "./components/Research";
-import Education from "./components/Education";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+
+const About = lazy(() => import("./components/About"));
+const Skills = lazy(() => import("./components/Skills"));
+const Experience = lazy(() => import("./components/Experience"));
+const Projects = lazy(() => import("./components/Projects"));
+const Research = lazy(() => import("./components/Research"));
+const Education = lazy(() => import("./components/Education"));
+const Contact = lazy(() => import("./components/Contact"));
+
+function SectionFallback() {
+  return <div className="section-padding bg-white animate-pulse"><div className="container-max"><div className="h-32 bg-slate-100 rounded-2xl" /></div></div>;
+}
 
 export default function App() {
   return (
@@ -16,13 +22,13 @@ export default function App() {
       <Navbar />
       <main id="main-content">
         <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Research />
-        <Education />
-        <Contact />
+        <Suspense fallback={<SectionFallback />}><About /></Suspense>
+        <Suspense fallback={<SectionFallback />}><Skills /></Suspense>
+        <Suspense fallback={<SectionFallback />}><Experience /></Suspense>
+        <Suspense fallback={<SectionFallback />}><Projects /></Suspense>
+        <Suspense fallback={<SectionFallback />}><Research /></Suspense>
+        <Suspense fallback={<SectionFallback />}><Education /></Suspense>
+        <Suspense fallback={<SectionFallback />}><Contact /></Suspense>
       </main>
       <Footer />
     </div>

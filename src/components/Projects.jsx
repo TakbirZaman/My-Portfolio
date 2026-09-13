@@ -19,15 +19,20 @@ export default function Projects() {
   const [showAll, setShowAll] = useState(false);
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.05 });
 
-  const filtered = activeFilter === "All"
-    ? projects
-    : projects.filter((p) => p.category === activeFilter);
+  const filtered = activeFilter === "All" ? projects : projects.filter((p) => p.category === activeFilter);
 
   const featured = projects.filter((p) => p.featured);
   const nonFeatured = projects.filter((p) => !p.featured);
-  const visible = showAll ? filtered : filtered.slice(0, 6);
+
   const showFeatured = activeFilter === "All";
-  const gridProjects = showFeatured ? visible.filter((p) => !p.featured) : visible;
+  // On "All": show 6 featured cards plus non-featured only when expanded
+  // On filtered view: paginate the filtered set
+  const gridProjects = showFeatured
+    ? (showAll ? nonFeatured : [])
+    : (showAll ? filtered : filtered.slice(0, 6));
+
+  const hasLive = (p) => p.live && p.live !== "#";
+  const hasGithub = (p) => p.github && !/^https:\/\/github\.com\/TakbirZaman\/?$/.test(p.github);
 
   return (
     <section id="projects" className="section-padding bg-slate-50" ref={ref}>
@@ -96,6 +101,7 @@ export default function Projects() {
                         alt={project.title}
                         className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
+                        decoding="async"
                       />
                     </div>
                   ) : (
@@ -123,7 +129,7 @@ export default function Projects() {
 
                     {/* Links */}
                     <div className="flex items-center gap-3 mt-auto">
-                      {project.live !== "#" && (
+                      {hasLive(project) && (
                         <a
                           href={project.live}
                           target="_blank"
@@ -133,14 +139,16 @@ export default function Projects() {
                           <ExternalLink size={14} /> Live Demo
                         </a>
                       )}
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-sm text-slate-400 hover:text-slate-700 ml-auto"
-                      >
-                        <FaGithub size={14} /> Code
-                      </a>
+                      {hasGithub(project) && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1.5 text-sm text-slate-400 hover:text-slate-700 ml-auto"
+                        >
+                          <FaGithub size={14} /> Code
+                        </a>
+                      )}
                     </div>
                   </div>
                 </motion.div>
@@ -168,6 +176,7 @@ export default function Projects() {
                       alt={project.title}
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 )}
@@ -177,14 +186,16 @@ export default function Projects() {
                       {project.category}
                     </div>
                     <div className="flex gap-2">
-                      {project.live !== "#" && (
-                        <a href={project.live} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-primary-500 transition-colors">
+                      {hasLive(project) && (
+                        <a href={project.live} target="_blank" rel="noopener noreferrer" aria-label="Live demo" className="text-slate-300 hover:text-primary-500 transition-colors">
                           <ExternalLink size={15} />
                         </a>
                       )}
-                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-slate-600 transition-colors">
-                        <FaGithub size={15} />
-                      </a>
+                      {hasGithub(project) && (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-slate-300 hover:text-slate-600 transition-colors">
+                          <FaGithub size={15} />
+                        </a>
+                      )}
                     </div>
                   </div>
 
@@ -206,14 +217,14 @@ export default function Projects() {
           })}
         </div>
 
-        {/* Show more */}
-        {filtered.length > 6 && (
+        {/* Show more — only on All when there are hidden non-featured, or on filtered when >6 */}
+        {(showFeatured ? nonFeatured.length > 0 : filtered.length > 6) && (
           <div className="text-center mt-8">
             <button
               onClick={() => setShowAll(!showAll)}
               className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
             >
-              {showAll ? "Show Less" : `Show All (${filtered.length})`}
+              {showAll ? "Show Less" : showFeatured ? `Show All (${projects.length})` : `Show All (${filtered.length})`}
             </button>
           </div>
         )}

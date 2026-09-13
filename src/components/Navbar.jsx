@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -16,12 +16,73 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Scroll spy via IntersectionObserver
+  useEffect(() => {
+    const ids = navLinks.map((l) => l.href.slice(1));
+    const sections = ids.map((id) => document.getElementById(id)).filter(Boolean);
+    if (!sections.length) return;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible[0]) setActive(`#${visible[0].target.id}`);
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: [0, 0.25, 0.5, 1] }
+    );
+    sections.forEach((s) => obs.observe(s));
+    return () => obs.disconnect();
+  }, []);
+
+  // Lock scroll + focus trap when mobile menu open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+      // focus first link
+      setTimeout(() => {
+        const first = menuRef.current?.querySelector("a, button");
+        first?.focus();
+      }, 100);
+    } else {
+      document.body.style.overflow = "";
+      buttonRef.current?.focus();
+    }
+    const onKey = (e) => {
+      if (e.key === "Escape") setMenuOpen(false);
+      if (e.key === "Tab" && menuOpen && menuRef.current) {
+        const focusable = menuRef.current.querySelectorAll('a[href], button:not([disabled])');
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  // Close on outside click
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onClick = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target) && !buttonRef.current?.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onClick);
+    return () => document.removeEventListener("mousedown", onClick);
+  }, [menuOpen]);
 
   return (
     <motion.nav
@@ -47,7 +108,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={() => setActive(link.href)}
+                aria-current={active === link.href ? "page" : undefined}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   active === link.href
                     ? "bg-primary-50 text-primary-600"
@@ -59,6 +120,7 @@ export default function Navbar() {
             ))}
             <a
               href="#contact"
+              aria-current={active === "#contact" ? "page" : undefined}
               className="ml-2 bg-primary-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-primary-700 transition-colors shadow-sm"
             >
               Hire Me
@@ -67,6 +129,7 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <button
+            ref={buttonRef}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
@@ -83,10 +146,14 @@ export default function Navbar() {
         {menuOpen && (
           <motion.div
             id="mobile-nav"
+            ref={menuRef}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-t border-slate-100 shadow-lg"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Navigation menu"
           >
             <div className="px-4 py-3 flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -94,7 +161,8 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:text-primary-600 hover:bg-primary-50 transition-colors"
+                  aria-current={active === link.href ? "page" : undefined}
+                  className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${active === link.href ? "bg-primary-50 text-primary-600" : "text-slate-700 hover:text-primary-600 hover:bg-primary-50"}`}
                 >
                   {link.label}
                 </a>

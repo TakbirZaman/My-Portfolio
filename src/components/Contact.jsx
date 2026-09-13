@@ -84,14 +84,24 @@ export default function Contact() {
     if (Object.keys(validation).length) { setErrors(validation); return; }
     const subject = encodeURIComponent(`Portfolio inquiry from ${form.name}`);
     const body = encodeURIComponent(`Hi Takbir,\n\n${form.message}\n\n— ${form.name} (${form.email})`);
-    window.location.href = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
+    const mailto = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
+    // Try to open mail client; fallback to copy + toast if blocked
+    try {
+      window.location.href = mailto;
+    } catch {
+      navigator.clipboard?.writeText(`Subject: Portfolio inquiry from ${form.name}\n\n${form.message}\n\n— ${form.name} (${form.email})`);
+    }
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 6000);
+    setTimeout(() => setSubmitted(false), 8000);
     setForm({ name: "", email: "", message: "", honeypot: "" });
   };
 
   const copyEmail = async () => {
-    try { await navigator.clipboard.writeText(personalInfo.email); setCopied(true); setTimeout(()=>setCopied(false),2000);} catch {}
+    try { await navigator.clipboard.writeText(personalInfo.email); setCopied(true); setTimeout(()=>setCopied(false),2000);} catch { setCopied(false); }
+  };
+  const copyDraft = async () => {
+    const draft = `Hi Takbir,\n\n${form.message || "[your message]"}\n\n— ${form.name || "[your name]"} (${form.email || "[your email]"})`;
+    try { await navigator.clipboard.writeText(draft); setCopied(true); setTimeout(()=>setCopied(false),2000);} catch {}
   };
 
   return (
@@ -183,8 +193,11 @@ export default function Contact() {
                     <CheckCircle2 size={32} className="text-teal-600" />
                   </div>
                   <h4 className="font-display font-bold text-xl text-slate-900 mb-2">Opening your email app…</h4>
-                  <p className="text-slate-500 text-sm">Your message was prepared in your default mail client. If it didn't open, email me at <a href={`mailto:${personalInfo.email}`} className="text-primary-700 underline">{personalInfo.email}</a>.</p>
-                  <button onClick={()=>setSubmitted(false)} className="mt-4 text-sm text-slate-500 underline">Send another</button>
+                  <p className="text-slate-500 text-sm">Your message was prepared in your default mail client. If it didn't open, your draft was copied — just paste into Gmail/Outlook. Or email directly at <a href={`mailto:${personalInfo.email}`} className="text-primary-700 underline">{personalInfo.email}</a>.</p>
+                  <div className="flex gap-3 mt-4">
+                    <button onClick={()=>setSubmitted(false)} className="text-sm bg-white border border-slate-200 px-4 py-2 rounded-xl hover:bg-slate-50">Send another</button>
+                    <button onClick={copyDraft} className="text-sm bg-teal-600 text-white px-4 py-2 rounded-xl hover:bg-teal-700 flex items-center gap-1.5"><Copy size={14}/> Copy draft</button>
+                  </div>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5" noValidate>
@@ -238,13 +251,19 @@ export default function Contact() {
                     />
                     {errors.message && <p id="error-message" className="text-xs text-red-600 mt-1">{errors.message}</p>}
                   </div>
-                  {/* Honeypot */}
-                  <input type="text" name="honeypot" value={form.honeypot} onChange={handleChange} tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
-                  <button type="submit" className="w-full flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-xl transition-colors shadow-lg shadow-teal-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-teal-600">
-                    <Send size={16} />
-                    Send via Email
-                  </button>
-                  <p className="text-xs text-slate-400 text-center">Opens your email app — no data stored. Prefer direct? <a href={`mailto:${personalInfo.email}`} className="underline text-slate-600">Email me</a>.</p>
+                  {/* Honeypot — visually hidden but accessible to bots */}
+                  <div className="absolute -left-[9999px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
+                    <label htmlFor="contact-hp">Leave empty</label>
+                    <input id="contact-hp" type="text" name="honeypot" value={form.honeypot} onChange={handleChange} tabIndex={-1} autoComplete="off" />
+                  </div>
+                  <div className="flex gap-3">
+                    <button type="submit" className="flex-1 flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-xl transition-colors shadow-lg shadow-teal-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-teal-600">
+                      <Send size={16} />
+                      Send via Email
+                    </button>
+                    <button type="button" onClick={copyDraft} className="px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 flex items-center gap-1.5 text-sm font-semibold"><Copy size={14}/> Copy</button>
+                  </div>
+                  <p className="text-xs text-slate-400 text-center">Opens your email app — no data stored. If blocked, use Copy. Prefer direct? <a href={`mailto:${personalInfo.email}`} className="underline text-slate-600">Email me</a>.</p>
                 </form>
               )}
             </div>

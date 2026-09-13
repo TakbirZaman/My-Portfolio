@@ -1,18 +1,16 @@
-import heroImg from "../assets/takbir2.jpg";
-import aboutImg from "../assets/takbir1.jpg";
-import galleryImg from "../assets/takbir.jpg";
-import deansAwardImg from "../assets/deansaward.jpg";
-import ridePriceImg from "../assets/ridepricebd.png";
-import constructionTrackerImg from "../assets/construction-tracker1.png";
-import connectHubImg from "../assets/connectHub.png";
-import airCanvasImg from "../assets/air-canvas.png";
-import techCommerceImg from "../assets/techCommerce.png";
-import dhakaTrafficImg from "../assets/dhaka-traffic-predictor.png";
-import taskManagerImg from "../assets/task-manager.png";
-import beatMeeImg from "../assets/beatMEE.png";
-import ragChatbotImg from "../assets/rag-chatbot.png";
-import apexDriftImg from "../assets/apex-car-drifting.png";
-import turfFootballImg from "../assets/turf-football.png";
+import heroImg from "../assets/takbir2.webp";
+import aboutImg from "../assets/takbir1.webp";
+import galleryImg from "../assets/takbir.webp";
+import deansAwardImg from "../assets/deansaward.webp";
+import ridePriceImg from "../assets/ridepricebd.webp";
+import constructionTrackerImg from "../assets/construction-tracker1.webp";
+import airCanvasImg from "../assets/air-canvas.webp";
+import techCommerceImg from "../assets/techCommerce.webp";
+import dhakaTrafficImg from "../assets/dhaka-traffic-predictor.webp";
+import taskManagerImg from "../assets/task-manager.webp";
+import beatMeeImg from "../assets/beatMEE.webp";
+import ragChatbotImg from "../assets/rag-chatbot.webp";
+import apexDriftImg from "../assets/apex-car-drifting.webp";
 //import resumePdf from "../assets/resume.pdf";
 
 export const personalInfo = {
@@ -109,50 +107,6 @@ export const experience = [
     tech: ["React", "Node.js", "Express", "REST APIs", "PostgreSQL", "Git & GitHub"],
   },
 ];
-export const skills = {
-  "Web & Frameworks": [
-    { name: "ASP.NET Core", level: 88 },
-    { name: "React", level: 78 },
-    { name: "Node.js", level: 75 },
-    { name: "Tailwind CSS", level: 85 },
-    { name: "EF Core", level: 82 },
-    { name: "FastAPI", level: 78 },
-    { name: "HTML/CSS", level: 90 },
-  ],
-  "ML & AI": [
-    { name: "Gemini AI / RAG", level: 75 },
-    { name: "n8n", level: 75 },
-    { name: "scikit-learn", level: 80 },
-    { name: "TensorFlow / Keras", level: 78 },
-    { name: "NLP (TF-IDF/DBSCAN)", level: 78 },
-    { name: "LSTM / Autoencoder", level: 75 },
-    { name: "CNN (DenseNet121)", level: 72 },
-    { name: "OpenCV / YuNet", level: 70 },
-  
-  ],
-  Languages: [
-    { name: "C#", level: 90 },
-    { name: "Python", level: 88 },
-    { name: "JavaScript", level: 78 },
-    { name: "SQL", level: 85 },
-    { name: "C++", level: 75 },
-  ],
-  "Databases & DevOps": [
-    { name: "SQL Server", level: 88 },
-    { name: "MySQL", level: 82 },
-    { name: "Oracle DB", level: 72 },
-    { name: "Git & GitHub", level: 88 },
-    { name: "Postman", level: 82 },
-    { name: "Docker", level: 68 },
-    { name: "GitHub Actions", level: 75 },
-  ],
-  "AI-Augmented Development": [
-    { name: "Claude / ChatGPT / Gemini", level: 85 },
-    { name: "OpenCode", level: 78 },
-    { name: "Prompt Engineering", level: 82 },
-    { name: "AI Code Review", level: 80 },
-  ],
-};
 export const skillTags = {
   Languages: ["C#", "Python", "JavaScript", "SQL", "C++", "PHP", "Java"],
   "Web & Frameworks": ["ASP.NET Core", "EF Core", "React", "Node.js", "Express.js", "Tailwind CSS", "FastAPI", "HTML/CSS"],
@@ -174,8 +128,7 @@ export const projects = [
     featured: true,
     image: techCommerceImg,
   },
-
-{
+  {
     title: "Construction Tracker",
     description:
       "Construction project management system for planning, task assignment, budget monitoring, material management, and team collaboration with role-based access control and real-time updates.",
@@ -187,34 +140,18 @@ export const projects = [
     featured: true,
     image: constructionTrackerImg,
   },
- {
+  {
     title: "RidePrice BD — Fare Estimator",
     description:
       "Real-time ride fare estimation system using a regression-based ML model trained on Dhaka transport data. Implements client-side inference for zero-latency predictions, incorporating features like distance, demand, weather, and peak-hour multipliers across 76+ locations.",
     tech: ["Python", "scikit-learn", "JavaScript", "Netlify"],
-    category: "ML Web App",
+    category: "AI/ML",
     color: "teal",
     live: "https://ridepricebd.netlify.app",
     github: "https://github.com/TakbirZaman/RidePriceBD",
     featured: true,
     image: ridePriceImg,
   },
-
-  {
-    title: "ConnectHub — Social Platform",
-    description:
-      "Full-stack social platform built with MVC architecture featuring RBAC-based authentication, post management, and marketplace integration. Designed with modular backend structure and normalized MySQL schema for scalable user interactions.",
-    tech: ["PHP", "HTML/CSS", "MySQL", "MVC"],
-    category: "Full Stack",
-    color: "indigo",
-    live: "https://takbir.gt.tc/ConnectHub/index.php?page=login&i=1",
-    github: "https://github.com/TakbirZaman/ConnectHub",
-    featured: false,
-    image: connectHubImg,
-  },
- 
- 
-  
   {
     title: "Task Manager",
     description:
@@ -232,186 +169,86 @@ export const projects = [
     description:
       "Browser air-drawing via MediaPipe HandLandmarker and webcam. Pinch to draw, open palm to erase, peace sign to undo, fist to clear. Triple-canvas architecture for flicker-free strokes, quadratic curve smoothing, stored stroke data for undo, and live FPS/confidence telemetry.",
     tech: ["Next.js", "MediaPipe", "TypeScript", "Tailwind CSS", "Canvas API"],
-    category: "Computer Vision",
+    category: "AI/ML",
     color: "violet",
     live: "https://draw-in-air-steel.vercel.app",
     github: "https://github.com/TakbirZaman/Air-Canvas",
     featured: true,
     image: airCanvasImg,
   },
- 
-
- 
+  {
+    title: "Dhaka Traffic Predictor",
+    description:
+      "AI congestion prediction for Dhaka routes. Crowd-sourced reports + historical aggregation with Gemini-generated natural-language explanations, Redis caching + BullMQ queuing, JWT refresh rotation, Zod-validated APIs, and dark asphalt/rickshaw-meter UI.",
+    tech: ["Next.js", "Express", "TypeScript", "MongoDB", "Redis", "Gemini AI"],
+    category: "AI/ML",
+    color: "indigo",
+    live: null,
+    github: "https://github.com/TakbirZaman/Dhaka-s-traffic-predictor",
+    featured: false,
+    image: dhakaTrafficImg,
+  },
   {
     title: "RAG Chatbot — Document Q&A",
     description:
-      "Retrieval-Augmented Generation chatbot that answers questions from uploaded PDFs. Implements TF-IDF cosine similarity search in pure Python for chunk retrieval, powered by Gemini LLM for accurate, context-grounded answers.",
+      "Retrieval-Augmented Generation chatbot that answers questions from uploaded PDFs. TF-IDF cosine similarity search in pure Python for chunk retrieval, powered by Gemini LLM for accurate, context-grounded answers.",
     tech: ["Python", "Streamlit", "Gemini AI", "RAG"],
-    category: "ML / AI",
+    category: "AI/ML",
     color: "indigo",
     live: "https://takbirzaman-rag-chatbot.streamlit.app",
     github: "https://github.com/TakbirZaman/rag-chatbot",
     featured: false,
     image: ragChatbotImg,
   },
-
-
-  {
-    title: "Student Attendance Management ",
-    description:
-      "RESTful attendance system built with ASP.NET Core Web API using clean 3-layer architecture. Supports secure CRUD operations, attendance tracking, and efficient student-class mapping with optimized database persistence.",
-    tech: ["C#", "ASP.NET Core", "EF Core", "SQL"],
-    category: "Backend API",
-    color: "violet",
-    live: "#",
-    github: "https://github.com/TakbirZaman/Student_Attendance_Management",
-    featured: false,
-  },
-  {
-    title: "Face Recognition System",
-    description:
-      "Real-time face recognition system using YuNet for detection and SFace embeddings for identification. CLAHE preprocessing + affine alignment, 128-d embeddings, cosine similarity matching. Auto-builds gallery from Google Drive subfolders with augmentation (flip/brightness) and a custom JS–Python bridge for live capture.",
-    tech: ["Python", "OpenCV", "YuNet", "SFace", "Jupyter"],
-    category: "Computer Vision",
-    color: "teal",
-    live: "#",
-    github: "https://github.com/TakbirZaman/face-recognition-system",
-    featured: false,
-  },
-  {
-    title: "Dhaka Traffic Predictor",
-    description:
-      "AI-integrated congestion prediction platform for Dhaka traffic routes. Combines crowd-sourced reports and historical aggregation with Gemini-generated natural-language explanations of why a route is congested — not just a score. Features Redis caching + BullMQ job queuing, JWT auth with refresh token rotation, Zod-validated APIs, and a distinctive dark asphalt/rickshaw fare-meter UI.",
-    tech: ["Next.js", "Express", "TypeScript", "MongoDB", "Redis", "Gemini AI"],
-    category: "ML Web App",
-    color: "indigo",
-    live: "#",
-    github: "https://github.com/TakbirZaman/Dhaka-s-traffic-predictor",
-    featured: false,
-    image: dhakaTrafficImg,
-  },
- 
-   
-  
-  {
-    title: "n8n Automation Workflows",
-    description:
-      "A collection of production n8n workflows covering AI-powered messaging, recruitment automation, job alerts, and email auto-response: a Messenger AI agent with memory, a Facebook Page auto-responder using Gemini Vision for text and image messages, a Gmail HR recruitment pipeline that scores and logs candidates, a scheduled Telegram job-alert bot, and a lightweight LLM-powered email auto-responder.",
-    tech: ["n8n", "Gemini AI", "Gmail API", "Telegram API", "Google Sheets"],
-    category: "ML / AI",
-    color: "amber",
-    live: "#",
-    github: "https://github.com/TakbirZaman/Automation-workflows",
-    featured: false,
-  },
-  
-  
   {
     title: "Churn Radar — Customer Churn Predictor",
     description:
-      "Full-stack ML application that predicts customer churn risk in real time, one customer at a time or in bulk from a CSV upload. FastAPI + scikit-learn Random Forest backend (ROC-AUC 0.80) with a Next.js dashboard that auto-generates its input form and validation directly from the model's schema — no frontend changes needed when the underlying dataset changes.",
+      "Full-stack ML app predicting churn risk in real time (single + bulk CSV). FastAPI + scikit-learn Random Forest (ROC-AUC 0.80) with Next.js dashboard that auto-generates its form/validation from the model schema — no frontend changes when dataset changes.",
     tech: ["Next.js", "TypeScript", "FastAPI", "scikit-learn", "Tailwind CSS"],
-    category: "ML / AI",
+    category: "AI/ML",
     color: "violet",
-    live: "#",
+    live: null,
     github: "https://github.com/TakbirZaman/Customer-Churn-Predictor",
     featured: false,
   },
   {
-    title: "Email Agent — AI Task Automation",
+    title: "n8n Automation Workflows",
     description:
-      "Autonomous multi-step AI agent that reads emails, analyzes content using Gemini, and auto-generates prioritized task lists. Runs on a daily schedule via GitHub Actions with zero manual effort.",
-    tech: ["Python", "Gemini AI", "GitHub Actions", "Automation"],
-    category: "ML / AI",
-    color: "teal",
-    live: "https://github.com/TakbirZaman/email-agent/actions",
-    github: "https://github.com/TakbirZaman/email-agent",
-    featured: false,
-  },
-  {
-    title: "Job Alert & Tracker Automation",
-    description:
-      "End-to-end automation that fetches remote job listings daily, scores them with a custom JavaScript algorithm for junior-friendliness and tech stack match, sends instant Telegram alerts for top matches, and logs everything to Google Sheets.",
-    tech: ["n8n", "JavaScript", "Telegram API", "Google Sheets"],
-    category: "ML / AI",
+      "Production n8n workflows: Messenger AI agent with memory, Facebook Page auto-responder (Gemini Vision), Gmail HR pipeline that scores/logs candidates, scheduled Telegram job-alert bot, and LLM email auto-responder. Gmail/Telegram/Google Sheets APIs.",
+    tech: ["n8n", "Gemini AI", "Gmail API", "Telegram API", "Google Sheets"],
+    category: "Automation",
     color: "amber",
-    live: "#",
-    github: "https://github.com/TakbirZaman",
-    featured: false,
-  },
-  {
-    title: "Indoor Hospital Management System",
-    description:
-      "Relational database system with normalized schema covering patients, doctors, wards, appointments, and billing, ensuring data integrity and efficient query performance.",
-    tech: ["Oracle", "SQL", "DB Design"],
-    category: "Database",
-    color: "violet",
-    live: "#",
-    github: "https://github.com/TakbirZaman/Indoor-Hospital-Management",
-    featured: false,
-  },
-  {
-    title: "Online Job Management Portal",
-    description:
-      "Java Swing-based desktop application for managing jobs, workers, and customer requests with real-time tracking and workflow validation.",
-    tech: ["Java", "Swing", "Desktop"],
-    category: "Desktop App",
-    color: "amber",
-    live: "#",
-    github: "https://github.com/TakbirZaman/Online-Job-Management-Portal",
-    featured: false,
-  },
-  {
-    title: "AI Email Auto-Responder",
-    description:
-      "Fully automated email management system that detects incoming Gmail messages, passes content to an AI model via OpenRouter, and sends professional contextual replies within 60 seconds — zero human intervention required.",
-    tech: ["n8n", "Gmail API", "OpenRouter AI", "JavaScript"],
-    category: "ML / AI",
-    color: "violet",
-    live: "#",
-    github: "https://github.com/TakbirZaman/Email-auto-responder",
+    live: null,
+    github: "https://github.com/TakbirZaman/Automation-workflows",
     featured: false,
   },
   {
     title: "RailView — OpenGL Railway Simulation",
     description:
-      "2D railway simulation built in C++ with OpenGL (GLUT) featuring moving trains, drifting clouds, and interactive Day/Night cycle. All scenery — hills, trees, lamps, roads, platforms — drawn with OpenGL primitives and keyboard-controlled animation.",
+      "2D railway simulation in C++ with OpenGL (GLUT): moving trains, drifting clouds, interactive Day/Night cycle. Hills, trees, lamps, roads, platforms — all OpenGL primitives and keyboard-controlled animation.",
     tech: ["C++", "OpenGL", "GLUT", "Animation"],
-    category: "Graphics / Simulation",
+    category: "Graphics",
     color: "indigo",
-    live: "#",
+    live: null,
     github: "https://github.com/TakbirZaman/RailView---OpenGL-Railway-Simulation",
     featured: false,
   },
-
-
-   {
+  {
     title: "Apex Drift — Top-Down Arcade Racer",
     description:
-      "Arcade racer built with React + Canvas + Vite. Top-down drift physics, keyboard steering (WASD / arrows), 2-player local multiplayer, garage upgrades, and coin/dollar progression persisted in localStorage with supercar-inspired original designs.",
+      "Arcade racer with React + Canvas + Vite. Top-down drift physics, WASD/arrows, 2-player local multiplayer, garage upgrades, and coin progression persisted in localStorage with supercar-inspired designs.",
     tech: ["React", "Canvas API", "Vite", "JavaScript", "Tailwind CSS"],
     category: "Game Dev",
     color: "amber",
-    live: "#",
+    live: null,
     github: "https://github.com/TakbirZaman/Car-Drift",
     featured: true,
     image: apexDriftImg,
   },
   {
-    title: "Energy Anomaly Detection — ML Pipeline",
-    description:
-      "Unsupervised anomaly detection on energy consumption time-series using Python. Features cleaning, seasonal decomposition, and ML scoring for spike/outage detection; designed for smart-meter datasets.",
-    tech: ["Python", "Pandas", "scikit-learn", "ML"],
-    category: "ML / AI",
-    color: "amber",
-    live: "#",
-    github: "https://github.com/TakbirZaman/energy-anomaly-ml",
-    featured: false,
-  }, 
-   {
     title: "beatMEE — Browser Fighting Game",
     description:
-      "Fast-paced 2D fighting game built with React and HTML5 Canvas without a game engine. Features adaptive AI difficulty, combo mechanics, cinematic effects, and optimized mobile touch controls.",
+      "Fast-paced 2D fighting game with React + HTML5 Canvas (no engine). Adaptive AI difficulty, combo mechanics, cinematic effects, and optimized mobile touch controls.",
     tech: ["React", "Canvas API", "Vite", "Game Dev"],
     category: "Game Dev",
     color: "amber",
@@ -419,31 +256,6 @@ export const projects = [
     github: "https://github.com/TakbirZaman/beatMEE",
     featured: false,
     image: beatMeeImg,
-  },
-  
-  
-  {
-    title: "Turf Football — Turf Booking Platform",
-    description:
-      "Turf booking platform for football grounds with real-time slot availability, team vs team match scheduling, and payment-ready booking flow. Built with responsive UI, slot locking, and admin management for turfs, pricing, and bookings.",
-    tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-    category: "Full Stack",
-    color: "teal",
-    live: "#",
-    github: "https://github.com/TakbirZaman",
-    featured: false,
-    image: turfFootballImg,
-  },
-  {
-    title: "Loan Approval Data Preprocessing",
-    description:
-      "Automated preprocessing pipeline in R handling missing values, outlier removal using IQR, and feature preparation for machine learning models.",
-    tech: ["R", "IQR", "Data Cleaning"],
-    category: "ML / AI",
-    color: "teal",
-    live: "#",
-    github: "https://github.com/TakbirZaman/Loan-Approval-Analysis-Data-Cleaning-in-R-language",
-    featured: false,
   },
 ];
 

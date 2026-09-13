@@ -59,20 +59,20 @@ export default function About() {
             </div>
 
             {/* Middle overlap card */}
-            <div className="absolute top-1/2 -translate-y-1/2 right-0 left-0 mx-auto w-40 h-44 rounded-3xl bg-gradient-to-br from-primary-500 to-violet-600 shadow-2xl flex items-center justify-center border-4 border-white">
+            <div className="absolute top-1/2 -translate-y-1/2 right-0 left-0 mx-auto w-40 h-44 rounded-3xl bg-gradient-to-br from-primary-500 to-violet-600 shadow-2xl flex items-center justify-center border-4 border-white pointer-events-none" aria-hidden="true">
               <div className="text-center text-white">
                 <p className="font-display font-bold text-3xl">3+</p>
                 <p className="text-xs font-medium opacity-90 mt-1">Years of<br/>Coding</p>
               </div>
             </div>
 
-            {/* Decorative dots */}
-            <div className="absolute top-4 right-0 grid grid-cols-4 gap-1.5 opacity-30">
+            {/* Decorative dots - non-interactive */}
+            <div className="absolute top-4 right-0 grid grid-cols-4 gap-1.5 opacity-30 pointer-events-none" aria-hidden="true">
               {Array.from({ length: 16 }).map((_, i) => (
                 <div key={i} className="w-1.5 h-1.5 rounded-full bg-primary-400" />
               ))}
             </div>
-            <div className="absolute bottom-4 left-0 grid grid-cols-4 gap-1.5 opacity-30">
+            <div className="absolute bottom-4 left-0 grid grid-cols-4 gap-1.5 opacity-30 pointer-events-none" aria-hidden="true">
               {Array.from({ length: 16 }).map((_, i) => (
                 <div key={i} className="w-1.5 h-1.5 rounded-full bg-teal-400" />
               ))}

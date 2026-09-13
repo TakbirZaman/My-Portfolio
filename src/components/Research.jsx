@@ -1,6 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import { FlaskConical, Tag, MessageSquare, Bone, Recycle, Brain } from "lucide-react";
+import { Tag, MessageSquare, Bone, Recycle, Brain } from "lucide-react";
 import { research } from "../data/portfolioData";
 
 const researchIcons = [MessageSquare, Bone, Recycle, Brain];
