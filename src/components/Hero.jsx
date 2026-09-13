@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Mail, ExternalLink, ArrowDown } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
@@ -10,6 +11,21 @@ const fadeUp = (delay = 0) => ({
 });
 
 export default function Hero() {
+  // Preload LCP hero image with correct hashed URL (vite handles personalInfo.photos.hero)
+  useEffect(() => {
+    const href = personalInfo.photos.hero;
+    if (!href || document.querySelector(`link[rel="preload"][href="${href}"]`)) return;
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "image";
+    link.href = href;
+    link.type = "image/webp";
+    link.setAttribute("fetchpriority", "high");
+    link.setAttribute("imagesrcset", href);
+    document.head.appendChild(link);
+    return () => { link.remove(); };
+  }, []);
+
   return (
     <section
       id="hero"
