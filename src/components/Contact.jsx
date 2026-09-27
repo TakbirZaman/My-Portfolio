@@ -51,7 +51,7 @@ const contactLinks = [
     icon: MapPin,
     label: "Location",
     value: personalInfo.location,
-    href: `https://www.google.com/maps/search/${encodeURIComponent(personalInfo.location)}`,
+    href: `https://www.google.com/maps/search/${encodeURIComponent(personalInfo.location.split("·")[0].trim())}`,
     color: "bg-teal-50 text-teal-700",
     border: "border-teal-200",
   },
@@ -83,13 +83,13 @@ export default function Contact() {
     const validation = validate();
     if (Object.keys(validation).length) { setErrors(validation); return; }
     const subject = encodeURIComponent(`Portfolio inquiry from ${form.name}`);
-    const body = encodeURIComponent(`Hi Takbir,\n\n${form.message}\n\n— ${form.name} (${form.email})`);
+    const body = encodeURIComponent(`Hi Takbir,\n\n${form.message}\n\n${form.name}\n${form.email}`);
     const mailto = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
     // Try to open mail client; fallback to copy + toast if blocked
     try {
       window.location.href = mailto;
     } catch {
-      navigator.clipboard?.writeText(`Subject: Portfolio inquiry from ${form.name}\n\n${form.message}\n\n— ${form.name} (${form.email})`);
+      navigator.clipboard?.writeText(`Subject: Portfolio inquiry from ${form.name}\n\n${form.message}\n\n${form.name}\n${form.email}`);
     }
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 8000);
@@ -100,7 +100,7 @@ export default function Contact() {
     try { await navigator.clipboard.writeText(personalInfo.email); setCopied(true); setTimeout(()=>setCopied(false),2000);} catch { setCopied(false); }
   };
   const copyDraft = async () => {
-    const draft = `Hi Takbir,\n\n${form.message || "[your message]"}\n\n— ${form.name || "[your name]"} (${form.email || "[your email]"})`;
+    const draft = `Hi Takbir,\n\n${form.message || "[your message]"}\n\n${form.name || "[your name]"}\n${form.email || "[your email]"}`;
     try { await navigator.clipboard.writeText(draft); setCopied(true); setTimeout(()=>setCopied(false),2000);} catch {}
   };
 
@@ -119,7 +119,7 @@ export default function Contact() {
           </p>
           <h2 className="section-title text-4xl font-bold">Contact Me</h2>
           <p className="section-subtitle max-w-lg mx-auto text-slate-500 mt-4">
-            Whether it's a job opportunity, collaboration, or just a hello — my inbox is always open.
+            Email is the fastest way to reach me. If you have a role, a project, or just a question, send it over.
           </p>
         </motion.div>
 
@@ -131,13 +131,13 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <h3 className="font-display text-xl font-bold text-slate-900 mb-2">
-              Let's build something great
+              Tell me what you are working on
             </h3>
             <p className="text-slate-500 mb-4 leading-relaxed">
-              Open to <strong className="text-slate-800">Full-Stack / AI Automation</strong> roles — Dhaka & remote. Best way to reach me is email; I reply within 24h.
+              I am open to <strong className="text-slate-800">full stack and AI automation</strong> roles, in Dhaka or remote. Email works best, and I usually reply the same day.
             </p>
             <button onClick={copyEmail} className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-primary-700 bg-primary-50 border border-primary-200 px-3 py-1.5 rounded-full hover:bg-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400">
-              <Copy size={14} /> {copied ? "Copied!" : "Copy email"} — {personalInfo.email}
+              <Copy size={14} /> {copied ? "Copied!" : "Copy email"}: {personalInfo.email}
             </button>
 
             <div className="grid gap-4">
@@ -193,7 +193,7 @@ export default function Contact() {
                     <CheckCircle2 size={32} className="text-teal-600" />
                   </div>
                   <h4 className="font-display font-bold text-xl text-slate-900 mb-2">Opening your email app…</h4>
-                  <p className="text-slate-500 text-sm">Your message was prepared in your default mail client. If it didn't open, your draft was copied — just paste into Gmail/Outlook. Or email directly at <a href={`mailto:${personalInfo.email}`} className="text-primary-700 underline">{personalInfo.email}</a>.</p>
+                  <p className="text-slate-500 text-sm">Your message went to your default mail app. If nothing opened, I copied the draft, so you can paste it into Gmail or Outlook. You can also email me directly at <a href={`mailto:${personalInfo.email}`} className="text-primary-700 underline">{personalInfo.email}</a>.</p>
                   <div className="flex gap-3 mt-4">
                     <button onClick={()=>setSubmitted(false)} className="text-sm bg-white border border-slate-200 px-4 py-2 rounded-xl hover:bg-slate-50">Send another</button>
                     <button onClick={copyDraft} className="text-sm bg-teal-600 text-white px-4 py-2 rounded-xl hover:bg-teal-700 flex items-center gap-1.5"><Copy size={14}/> Copy draft</button>
@@ -246,12 +246,12 @@ export default function Contact() {
                       rows={5}
                       aria-invalid={!!errors.message}
                       aria-describedby={errors.message ? "error-message" : undefined}
-                      placeholder="Hi Takbir, we have a Full-Stack role..."
+                      placeholder="Tell me about the role or the project"
                       className={`w-full px-4 py-3 rounded-xl border focus:ring-2 focus:border-transparent outline-none transition-all text-sm resize-none ${errors.message ? "border-red-300 focus:ring-red-400" : "border-slate-200 focus:ring-teal-500"}`}
                     />
                     {errors.message && <p id="error-message" className="text-xs text-red-600 mt-1">{errors.message}</p>}
                   </div>
-                  {/* Honeypot — visually hidden but accessible to bots */}
+                  {/* Honeypot, visually hidden but accessible to bots */}
                   <div className="absolute -left-[9999px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
                     <label htmlFor="contact-hp">Leave empty</label>
                     <input id="contact-hp" type="text" name="honeypot" value={form.honeypot} onChange={handleChange} tabIndex={-1} autoComplete="off" />
@@ -263,7 +263,7 @@ export default function Contact() {
                     </button>
                     <button type="button" onClick={copyDraft} className="px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 flex items-center gap-1.5 text-sm font-semibold"><Copy size={14}/> Copy</button>
                   </div>
-                  <p className="text-xs text-slate-400 text-center">Opens your email app — no data stored. If blocked, use Copy. Prefer direct? <a href={`mailto:${personalInfo.email}`} className="underline text-slate-600">Email me</a>.</p>
+                  <p className="text-xs text-slate-400 text-center">This opens your email app, and nothing gets stored on the site. If it gets blocked, use the Copy button instead. <a href={`mailto:${personalInfo.email}`} className="underline text-slate-600">Email me directly</a>.</p>
                 </form>
               )}
             </div>

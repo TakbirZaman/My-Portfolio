@@ -46,7 +46,7 @@ export default function Projects() {
         >
           <p className="text-violet-600 font-semibold text-sm tracking-widest uppercase mb-3">Portfolio</p>
           <h2 className="section-title">Projects</h2>
-          <p className="section-subtitle">Things I've built — solo and in teams.</p>
+          <p className="section-subtitle">Most of these I built on my own. A couple came out of client work.</p>
         </motion.div>
 
         {/* Filter tabs */}
@@ -72,7 +72,7 @@ export default function Projects() {
           ))}
         </motion.div>
 
-        {/* Featured projects (large cards) — curated 6 */}
+        {/* Featured projects (large cards, curated 6) */}
         {showFeatured && (
           <div className="grid md:grid-cols-3 gap-6 mb-6">
             {featured.slice(0, 6).map((project, idx) => {
@@ -217,7 +217,7 @@ export default function Projects() {
           })}
         </div>
 
-        {/* Show more — only on All when there are hidden non-featured, or on filtered when >6 */}
+        {/* Show more: only on All when there are hidden non-featured, or on filtered when more than 6 */}
         {(showFeatured ? nonFeatured.length > 0 : filtered.length > 6) && (
           <div className="text-center mt-8">
             <button
@@ -229,7 +229,7 @@ export default function Projects() {
           </div>
         )}
         {filtered.length === 0 && (
-          <p className="text-center text-slate-400 text-sm mt-8">No projects in this category.</p>
+          <p className="text-center text-slate-400 text-sm mt-8">Nothing filed under this category yet.</p>
         )}
       </div>
     </section>

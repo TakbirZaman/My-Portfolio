@@ -25,7 +25,7 @@ export default function Education() {
         >
           <p className="text-primary-600 font-semibold text-sm tracking-widest uppercase mb-3">Academic Background</p>
           <h2 className="section-title">Education</h2>
-          <p className="section-subtitle">My academic foundation.</p>
+          <p className="section-subtitle">Where I studied and what I spent most of my time on.</p>
         </motion.div>
 
         <div className="max-w-3xl mx-auto space-y-6">
@@ -73,7 +73,7 @@ export default function Education() {
                 {/* CGPA visual bar */}
                 <div className="mb-6">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-xs font-medium text-slate-500">Academic Performance</span>
+                    <span className="text-xs font-medium text-slate-500">Overall grade</span>
                     <span className="text-xs font-bold text-primary-600">{edu.cgpa}</span>
                   </div>
                   <div className="h-2 bg-slate-100 rounded-full overflow-hidden">

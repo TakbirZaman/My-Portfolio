@@ -43,7 +43,7 @@ export default function Hero() {
             {/* Availability badge */}
             <motion.div {...fadeUp(0.1)} className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 text-teal-700 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
               <span className="w-2 h-2 bg-teal-500 rounded-full animate-pulse" />
-              Searching for opportunities
+              Searching for a new role
             </motion.div>
 
             <motion.h1 {...fadeUp(0.2)} className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight">
@@ -118,7 +118,7 @@ export default function Hero() {
               <div className="relative w-72 h-80 md:w-80 md:h-96 rounded-3xl overflow-hidden border-4 border-white shadow-2xl motion-safe:animate-float">
                 <img
                   src={personalInfo.photos.hero}
-                  alt="Takbir Zaman Bhuiyan — Software Engineer"
+                  alt="Takbir Zaman Bhuiyan, software engineer"
                   width="320"
                   height="384"
                   fetchPriority="high"
@@ -153,7 +153,7 @@ export default function Hero() {
                 className="absolute -left-4 bottom-10 bg-white rounded-2xl shadow-lg border border-slate-100 px-4 py-3"
               >
                 <p className="text-xs text-amber-500 font-semibold">🏆 Dean's Award</p>
-                <p className="text-sm font-display font-bold text-slate-800">2× Recipient</p>
+                <p className="text-sm font-display font-bold text-slate-800">Won twice</p>
               </motion.div>
             </motion.div>
 

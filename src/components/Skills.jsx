@@ -44,7 +44,7 @@ export default function Skills() {
           <p className="text-primary-600 font-semibold text-sm tracking-widest uppercase mb-3">Technical Expertise</p>
           <h2 className="section-title">Skills & Technologies</h2>
           <p className="section-subtitle mt-3 max-w-xl mx-auto">
-            Tools and languages I work with — from systems programming to full-stack web and machine learning.
+            These are the tools I actually reach for. C# and PHP are leftovers from early university projects.
           </p>
         </motion.div>
 
@@ -133,7 +133,7 @@ export default function Skills() {
           transition={{ delay: 0.6 }}
           className="text-center text-slate-400 text-sm mt-8"
         >
-          Always learning — currently exploring agentic AI systems and workflow automation with n8n and GitHub Actions.
+          Lately I have been putting my free time into agentic AI, and into wiring n8n and GitHub Actions together.
         </motion.p>
       </div>
     </section>

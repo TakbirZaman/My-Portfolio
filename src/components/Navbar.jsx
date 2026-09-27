@@ -123,7 +123,7 @@ export default function Navbar() {
               aria-current={active === "#contact" ? "page" : undefined}
               className="ml-2 bg-primary-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-primary-700 transition-colors shadow-sm"
             >
-              Hire Me
+              Get in Touch
             </a>
           </div>
 
@@ -172,7 +172,7 @@ export default function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className="mt-2 bg-primary-600 text-white px-4 py-2.5 rounded-lg text-sm font-semibold text-center"
               >
-                Hire Me
+                Get in Touch
               </a>
             </div>
           </motion.div>

@@ -14,7 +14,7 @@ export default function Footer() {
             <p className="font-display font-bold text-2xl text-white mb-1">
               TZ<span className="text-primary-400">.</span>
             </p>
-            <p className="text-sm">Takbir Zaman Bhuiyan · Software Engineer · Dhaka, BD</p>
+            <p className="text-sm">Takbir Zaman Bhuiyan · Full-Stack Developer · Dhaka, BD</p>
           </div>
 
           {/* Nav links */}
@@ -53,11 +53,11 @@ export default function Footer() {
 
         <div className="border-t border-slate-800 mt-8 pt-6 text-center text-sm">
           <p>
-            © {year} Takbir Zaman Bhuiyan · Built with{" "}
+            © {year} Takbir Zaman Bhuiyan. Built with{" "}
             <span className="text-red-400 inline-flex items-center gap-0.5">
               <FaHeart size={12} />
             </span>{" "}
-            using React + Tailwind CSS + Framer Motion
+            using React, Tailwind CSS and Framer Motion
           </p>
         </div>
       </div>

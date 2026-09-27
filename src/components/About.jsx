@@ -4,10 +4,10 @@ import { MapPin, GraduationCap, Briefcase, Code2 } from "lucide-react";
 import { personalInfo } from "../data/portfolioData";
 
 const highlights = [
-  { icon: GraduationCap, label: "AIUB — BSc CSE", sub: "CGPA 3.76 / 4.0", color: "text-primary-600 bg-primary-50" },
-  { icon: Briefcase, label: "WebtrixLab + NNSEL", sub: "AI workflows & software engineering", color: "text-teal-600 bg-teal-50" },
-  { icon: Code2, label: "Real Product Work", sub: "React • Node • Python", color: "text-violet-600 bg-violet-50" },
-  { icon: MapPin, label: "Dhaka, Bangladesh", sub: "Remote-ready", color: "text-amber-600 bg-amber-50" },
+  { icon: GraduationCap, label: "AIUB, BSc CSE", sub: "CGPA 3.76 / 4.0", color: "text-primary-600 bg-primary-50" },
+  { icon: Briefcase, label: "WebtrixLab + NNSEL", sub: "n8n workflows and web apps", color: "text-teal-600 bg-teal-50" },
+  { icon: Code2, label: "Shipped Projects", sub: "React • Node • Python", color: "text-violet-600 bg-violet-50" },
+  { icon: MapPin, label: "Dhaka, Bangladesh", sub: "Open to remote work", color: "text-amber-600 bg-amber-50" },
 ];
 
 export default function About() {
@@ -87,18 +87,18 @@ export default function About() {
           >
             <p className="text-primary-600 font-semibold text-sm tracking-widest uppercase mb-3">About Me</p>
             <h2 className="section-title mb-5">
-              Building practical products with<br />
-              <span className="gradient-text">AI, automation, and modern web experiences.</span>
+              Most of my work is AI, automation,<br />
+              <span className="gradient-text">and the web apps that sit behind them.</span>
             </h2>
 
             <p className="text-slate-600 leading-relaxed mb-4">
-              I'm a Computer Science & Engineering graduate from <strong className="text-slate-800">AIUB</strong> (CGPA: <strong className="text-primary-600">3.76</strong>) who ships practical products — from ML-backed web apps to AI automation. I focus on clean architecture, measurable impact, and polished UX.
+              I finished my Computer Science and Engineering degree at <strong className="text-slate-800">AIUB</strong> with a CGPA of <strong className="text-primary-600">3.76</strong>. What I enjoy most is the stretch where an idea turns into something a person can open and use, so my projects usually end up with machine learning, a backend, and a real interface in the same repository.
             </p>
             <p className="text-slate-600 leading-relaxed mb-6">
-              At <strong className="text-slate-800">WebtrixLab</strong> I build AI-driven workflows (n8n, Gemini) and full-stack apps (Next.js, FastAPI, Node). My internship at <strong className="text-slate-800">NN Services & Engineering Ltd (NNSEL)</strong> focused on React + REST APIs and performance. Recent builds: <strong className="text-slate-800">TechCommerce</strong> (AI e-commerce + PC Builder), <strong className="text-slate-800">Air Canvas</strong> (MediaPipe hand-tracking), <strong className="text-slate-800">RidePrice BD</strong>, <strong className="text-slate-800">Task Manager</strong>, and <strong className="text-slate-800">Construction Tracker</strong>.
+              At <strong className="text-slate-800">WebtrixLab</strong> I build n8n workflows with Gemini and full stack apps on Next.js, FastAPI, and Node. Before that I interned at <strong className="text-slate-800">NN Services & Engineering Ltd (NNSEL)</strong>, where I worked on React components and REST APIs and spent a lot of time on performance. The recent ones I am happy to walk anyone through: <strong className="text-slate-800">TechCommerce</strong> (a store with an AI advisor and a PC builder), <strong className="text-slate-800">Air Canvas</strong> (drawing with your hand through the webcam), <strong className="text-slate-800">RidePrice BD</strong>, <strong className="text-slate-800">Task Manager</strong>, and <strong className="text-slate-800">Construction Tracker</strong>.
             </p>
             <p className="text-slate-600 leading-relaxed mb-8">
-              I love taking an idea from zero to deployed — scoping, building, and iterating with users. Open to <strong className="text-slate-800">Full-Stack / AI Automation</strong> roles (Dhaka, remote) where I can own features and ship fast.
+              I like owning a feature from the first rough plan through deployment and the bug reports that follow. Right now I am looking for <strong className="text-slate-800">full stack or AI automation</strong> work, in Dhaka or remote.
             </p>
 
             {/* Highlights grid */}

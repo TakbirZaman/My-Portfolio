@@ -15,9 +15,9 @@ import apexDriftImg from "../assets/apex-car-drifting.webp";
 
 export const personalInfo = {
   name: "Takbir Zaman Bhuiyan",
-  title: "Full-Stack Developer · AI & Automation Engineer",
-  tagline: "Full-Stack · AI/ML · Automation",
-  bio: "CSE graduate (AIUB — CGPA 3.76) building AI-powered web products. At WebtrixLab I ship n8n + Gemini workflows and FastAPI/Next.js apps; previously SWE Intern at NN Services & Engineering Ltd (NNSEL). I take ideas from 0 → deployed — clean APIs, data pipelines, and polished UX. Open to full-time Software Engineering roles.",
+  title: "Full-Stack Developer & AI Automation Engineer",
+  tagline: "Full-Stack, AI/ML, Automation",
+  bio: "I finished my CSE degree at AIUB in 2026 with a 3.76 CGPA. Lately I have been building web apps with FastAPI and Next.js, and setting up automation workflows on n8n at WebtrixLab. Before that I was a software engineering intern at NN Services & Engineering, working mostly in React and REST APIs. I am looking for a full-time software engineering role, either in Dhaka or remote.",
   location: "Dhaka, Bangladesh · Remote",
   email: "takbirzamanbhuiyan@gmail.com",
   phone: "+8801631107100",
@@ -45,12 +45,12 @@ export const education = [
     degree: "BSc in Computer Science & Engineering",
     institution: "American International University-Bangladesh (AIUB)",
     location: "Dhaka, Bangladesh",
-    period: "2022 – 2026 · Graduated",
+    period: "2022 to 2026 · Graduated",
     cgpa: "3.76 / 4.0",
     highlights: [
-      "Graduated — Class of 2026",
-      "Dean's Award – Fall 2023–24",
-      "Dean's Award – Fall 2024–25",
+      "Graduated, Class of 2026",
+      "Dean's Award, Fall 2023-24",
+      "Dean's Award, Fall 2024-25",
       "Relevant Coursework: Data Structures & Algorithms, Machine Learning, Computer Vision, Database Systems, Software Engineering, Artificial Intelligence",
     ],
   },
@@ -82,13 +82,13 @@ export const experience = [
     role: "AI Automation & Full Stack Developer",
     company: "WebtrixLab",
     location: "Dhaka, Bangladesh",
-    period: "2025 – Present",
+    period: "2025 to Present",
     type: "Part-time",
     highlights: [
-      "Building and deploying AI automation workflows using n8n for real client use cases",
-      "Developing full-stack web applications from frontend to backend and database",
-      "Building automated content pipelines and data-driven growth strategies for digital brand presence",
-      "Contributing to client project delivery across web development and automation services",
+      "Build and ship n8n automation workflows that clients actually use day to day",
+      "Develop web apps end to end, from the interface down to the database",
+      "Set up automated content pipelines so client accounts keep posting without someone logging in to do it",
+      "Handle the whole project cycle, from the scoping call to deploying to production",
     ],
     tech: ["Next.js", "React", "Node.js", "Express", "MongoDB", "n8n", "REST APIs", "Git & GitHub"],
   },
@@ -96,13 +96,13 @@ export const experience = [
     role: "Software Engineer Intern",
     company: "NNSEL",
     location: "Dhaka, Bangladesh",
-    period: "Feb 2025 – May 2025",
+    period: "Feb 2025 to May 2025",
     type: "Internship",
     highlights: [
-      "Developed and maintained responsive React-based frontend components",
-      "Built and integrated RESTful APIs using Node.js and Express",
-      "Reduced frontend load time by optimizing component rendering and API calls",
-      "Collaborated in agile sprint cycles, code reviews, and team stand-ups",
+      "Built and maintained the React components their client dashboards ran on",
+      "Wired up REST APIs in Node.js and Express to feed those components",
+      "Cut page load time by trimming render work and removing redundant API calls",
+      "Worked in sprints, with code reviews and a standup every morning",
     ],
     tech: ["React", "Node.js", "Express", "REST APIs", "PostgreSQL", "Git & GitHub"],
   },
@@ -117,9 +117,9 @@ export const skillTags = {
 
 export const projects = [
   {
-    title: "TechCommerce — AI Based E-Commerce Platform",
+    title: "TechCommerce: AI E-Commerce Platform",
     description:
-      "Full-stack e-commerce with FastAPI + Next.js: 69 products across 14 categories, JWT auth, session cart, coupon system, order tracking, admin panel (products/orders/coupons/customers/delivery zones) + AI Advisor (natural-language recommendations), PC Builder with compatibility engine, and product comparison.",
+      "An online store built with FastAPI and Next.js. It runs 69 products across 14 categories, with JWT login, a cart that survives a page refresh, coupons, order tracking, and an admin panel for products, orders, coupons, customers, and delivery zones. I also built an AI Advisor that recommends products from a typed question, a PC Builder that flags incompatible parts, and a side by side compare view.",
     tech: ["FastAPI", "Next.js", "TypeScript", "SQLAlchemy", "Tailwind CSS", "JWT"],
     category: "Full Stack",
     color: "teal",
@@ -131,7 +131,7 @@ export const projects = [
   {
     title: "Construction Tracker",
     description:
-      "Construction project management system for planning, task assignment, budget monitoring, material management, and team collaboration with role-based access control and real-time updates.",
+      "A project tracker for construction sites. Site managers use it to plan the work, assign tasks, watch the budget, log delivered materials, and coordinate the crew, with role based access so everyone sees the part that is theirs. The numbers update live instead of waiting for a refresh.",
     tech: ["React", "Node.js", "Express", "PostgreSQL"],
     category: "Full Stack",
     color: "teal",
@@ -141,9 +141,9 @@ export const projects = [
     image: constructionTrackerImg,
   },
   {
-    title: "RidePrice BD — Fare Estimator",
+    title: "RidePrice BD Fare Estimator",
     description:
-      "Real-time ride fare estimation system using a regression-based ML model trained on Dhaka transport data. Implements client-side inference for zero-latency predictions, incorporating features like distance, demand, weather, and peak-hour multipliers across 76+ locations.",
+      "A fare estimator for rides around Dhaka. I trained a regression model on local transport data, then moved the model into the browser so the estimate comes back without a round trip to a server. It reads distance, current demand, weather, and peak hour multipliers, and it covers more than 76 locations.",
     tech: ["Python", "scikit-learn", "JavaScript", "Netlify"],
     category: "AI/ML",
     color: "teal",
@@ -155,7 +155,7 @@ export const projects = [
   {
     title: "Task Manager",
     description:
-      "Full-stack task management app with JWT auth, per-user data isolation, CRUD, filtering, sorting, CSV export, and task statistics. Built with a React SPA + Express REST API + PostgreSQL — no ORM, raw parameterized SQL.",
+      "A task manager where JWT login keeps each person's tasks to themselves. You can filter, sort, export to CSV, and check a small stats panel. The front end is a React SPA, the back end is an Express REST API on PostgreSQL, and I wrote the SQL by hand with parameterized queries rather than pulling in an ORM.",
     tech: ["React 19", "Node.js", "Express", "PostgreSQL", "JWT", "Tailwind CSS", "Docker"],
     category: "Full Stack",
     color: "indigo",
@@ -165,9 +165,9 @@ export const projects = [
     image: taskManagerImg,
   },
   {
-    title: "Air Canvas — Hand-Tracking Drawing Board",
+    title: "Air Canvas: Hand Tracking Drawing Board",
     description:
-      "Browser air-drawing via MediaPipe HandLandmarker and webcam. Pinch to draw, open palm to erase, peace sign to undo, fist to clear. Triple-canvas architecture for flicker-free strokes, quadratic curve smoothing, stored stroke data for undo, and live FPS/confidence telemetry.",
+      "Draw on your webcam with your hand. Pinch to draw, open your palm to erase, two fingers to undo, a fist to wipe the canvas. Three stacked canvases keep the strokes from flickering, points get joined with quadratic curves so the lines come out smooth, and the app shows live FPS along with the hand tracker's confidence score.",
     tech: ["Next.js", "MediaPipe", "TypeScript", "Tailwind CSS", "Canvas API"],
     category: "AI/ML",
     color: "violet",
@@ -179,7 +179,7 @@ export const projects = [
   {
     title: "Dhaka Traffic Predictor",
     description:
-      "AI congestion prediction for Dhaka routes. Crowd-sourced reports + historical aggregation with Gemini-generated natural-language explanations, Redis caching + BullMQ queuing, JWT refresh rotation, Zod-validated APIs, and dark asphalt/rickshaw-meter UI.",
+      "A traffic prediction app for Dhaka routes. People report congestion when they see it, and the app mixes those reports with history to guess what a route will look like later. Gemini writes a short plain explanation for each guess. Redis caches the results and BullMQ runs the heavier aggregation in the background. The interface is styled after a rickshaw meter.",
     tech: ["Next.js", "Express", "TypeScript", "MongoDB", "Redis", "Gemini AI"],
     category: "AI/ML",
     color: "indigo",
@@ -189,9 +189,9 @@ export const projects = [
     image: dhakaTrafficImg,
   },
   {
-    title: "RAG Chatbot — Document Q&A",
+    title: "RAG Chatbot for Document Q&A",
     description:
-      "Retrieval-Augmented Generation chatbot that answers questions from uploaded PDFs. TF-IDF cosine similarity search in pure Python for chunk retrieval, powered by Gemini LLM for accurate, context-grounded answers.",
+      "A chatbot that answers questions about PDFs you upload. Finding the right passage is plain TF-IDF cosine similarity written in Python, no vector database involved. Gemini writes the answer, but only from the chunks that actually matched, so it stays tied to the document.",
     tech: ["Python", "Streamlit", "Gemini AI", "RAG"],
     category: "AI/ML",
     color: "indigo",
@@ -201,9 +201,9 @@ export const projects = [
     image: ragChatbotImg,
   },
   {
-    title: "Churn Radar — Customer Churn Predictor",
+    title: "Churn Radar",
     description:
-      "Full-stack ML app predicting churn risk in real time (single + bulk CSV). FastAPI + scikit-learn Random Forest (ROC-AUC 0.80) with Next.js dashboard that auto-generates its form/validation from the model schema — no frontend changes when dataset changes.",
+      "Predicts which customers are about to leave. You can score a single record or upload a whole CSV. The model is a Random Forest in scikit-learn, served through FastAPI, sitting at an ROC-AUC of 0.80. The Next.js dashboard builds its own form fields straight from the model schema, so swapping in a new dataset does not mean rewriting the front end.",
     tech: ["Next.js", "TypeScript", "FastAPI", "scikit-learn", "Tailwind CSS"],
     category: "AI/ML",
     color: "violet",
@@ -214,7 +214,7 @@ export const projects = [
   {
     title: "n8n Automation Workflows",
     description:
-      "Production n8n workflows: Messenger AI agent with memory, Facebook Page auto-responder (Gemini Vision), Gmail HR pipeline that scores/logs candidates, scheduled Telegram job-alert bot, and LLM email auto-responder. Gmail/Telegram/Google Sheets APIs.",
+      "Five n8n workflows that run in production. A Messenger bot that remembers what you told it earlier, a Facebook Page auto responder that looks at images with Gemini Vision, a Gmail pipeline that scores and logs job applicants, a scheduled Telegram bot for new job alerts, and an LLM that drafts replies to email. They talk to the Gmail, Telegram, and Google Sheets APIs.",
     tech: ["n8n", "Gemini AI", "Gmail API", "Telegram API", "Google Sheets"],
     category: "Automation",
     color: "amber",
@@ -223,9 +223,9 @@ export const projects = [
     featured: false,
   },
   {
-    title: "RailView — OpenGL Railway Simulation",
+    title: "RailView: OpenGL Railway Simulation",
     description:
-      "2D railway simulation in C++ with OpenGL (GLUT): moving trains, drifting clouds, interactive Day/Night cycle. Hills, trees, lamps, roads, platforms — all OpenGL primitives and keyboard-controlled animation.",
+      "A 2D railway scene written in C++ with OpenGL and GLUT. Trains run along the track, clouds drift past, and you can switch between day and night. The hills, trees, street lamps, roads, and platforms are all built from OpenGL primitives, and the animation is driven from the keyboard.",
     tech: ["C++", "OpenGL", "GLUT", "Animation"],
     category: "Graphics",
     color: "indigo",
@@ -234,9 +234,9 @@ export const projects = [
     featured: false,
   },
   {
-    title: "Apex Drift — Top-Down Arcade Racer",
+    title: "Apex Drift: Top Down Arcade Racer",
     description:
-      "Arcade racer with React + Canvas + Vite. Top-down drift physics, WASD/arrows, 2-player local multiplayer, garage upgrades, and coin progression persisted in localStorage with supercar-inspired designs.",
+      "A top down arcade racer in React and Canvas. The cars drift through corners, WASD or the arrow keys steer, and two people can race on the same keyboard. Coins and garage upgrades are saved to localStorage, and the car designs are loosely based on supercars.",
     tech: ["React", "Canvas API", "Vite", "JavaScript", "Tailwind CSS"],
     category: "Game Dev",
     color: "amber",
@@ -246,9 +246,9 @@ export const projects = [
     image: apexDriftImg,
   },
   {
-    title: "beatMEE — Browser Fighting Game",
+    title: "beatMEE: Browser Fighting Game",
     description:
-      "Fast-paced 2D fighting game with React + HTML5 Canvas (no engine). Adaptive AI difficulty, combo mechanics, cinematic effects, and optimized mobile touch controls.",
+      "A 2D fighting game built in React and HTML5 Canvas, with no game engine underneath. The AI raises or lowers its difficulty based on how the round is going, combos chain into each other, hits get a short screen shake, and the touch controls are set up properly for playing on a phone.",
     tech: ["React", "Canvas API", "Vite", "Game Dev"],
     category: "Game Dev",
     color: "amber",
@@ -262,7 +262,7 @@ export const projects = [
 export const research = [
   {
     title: "Sentiment-Based Product Grouping",
-    description: "Built an NLP pipeline using TF-IDF and DBSCAN clustering with PCA for dimensionality reduction, enabling sentiment-driven product segmentation.",
+    description: "Grouped products by the sentiment in their reviews. The reviews went through TF-IDF first, then DBSCAN to cluster them, with PCA pulling the dimensions down so the clusters were actually readable.",
     tags: ["NLP", "TF-IDF", "DBSCAN", "PCA"],
     metrics: { method: "DBSCAN", vectorizer: "TF-IDF", reduction: "PCA" },
     status: "Research Project",
@@ -270,7 +270,7 @@ export const research = [
   },
   {
     title: "Explainable Osteoporosis Detection System",
-    description: "DenseNet121-based deep learning model achieving 87.5% recall, enhanced with SE Attention and Grad-CAM for interpretable predictions and clinical relevance.",
+    description: "A DenseNet121 model for spotting osteoporosis in scans, sitting at 87.5% recall. I added SE Attention and used Grad-CAM so the model can point at the part of the image that drove each prediction.",
     tags: ["DenseNet121", "Grad-CAM", "XAI"],
     metrics: { recall: "87.5%" },
     status: "Research Project",
@@ -278,7 +278,7 @@ export const research = [
   },
   {
     title: "Waste Image Classification Using EfficientNet-B3",
-    description: "EfficientNet-B3 model achieving 94% accuracy, outperforming multiple architectures in multi-class waste classification tasks.",
+    description: "An EfficientNet-B3 classifier for waste images that hit 94% accuracy. I ran it against a few other architectures on the same dataset before settling on this one.",
     tags: ["EfficientNet-B3", "Transfer Learning"],
     metrics: { accuracy: "94%" },
     status: "Research Project",
@@ -286,7 +286,7 @@ export const research = [
   },
   {
     title: "Brain Tumor Segmentation & Classification",
-    description: "Multi-task deep learning framework for MRI analysis achieving 95.6% accuracy across multiple tumor classes.",
+    description: "A model that classifies and segments brain tumors in MRI scans, reaching 95.6% accuracy across the tumor classes.",
     tags: ["Deep Learning", "MRI"],
     metrics: { accuracy: "95.6%" },
     status: "Research Project",
