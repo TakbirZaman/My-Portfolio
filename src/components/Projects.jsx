@@ -72,10 +72,10 @@ export default function Projects() {
           ))}
         </motion.div>
 
-        {/* Featured projects (large cards, curated 6) */}
+        {/* Featured projects (large cards) */}
         {showFeatured && (
           <div className="grid md:grid-cols-3 gap-6 mb-6">
-            {featured.slice(0, 6).map((project, idx) => {
+            {featured.map((project, idx) => {
               const colors = colorMap[project.color] || colorMap.indigo;
               return (
                 <motion.div

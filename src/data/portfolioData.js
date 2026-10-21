@@ -11,6 +11,12 @@ import taskManagerImg from "../assets/task-manager.webp";
 import beatMeeImg from "../assets/beatMEE.webp";
 import ragChatbotImg from "../assets/rag-chatbot.webp";
 import apexDriftImg from "../assets/apex-car-drifting.webp";
+import byteSpaceImg from "../assets/bytespace-new.webp";
+import railViewImg from "../assets/railview.webp";
+import universalStudioToolkitImg from "../assets/universal-studio-toolkit.webp";
+import localConnectImg from "../assets/localconnect.webp";
+import hookDeskImg from "../assets/hookdesk.webp";
+import clientFlowImg from "../assets/client-flow.webp";
 //import resumePdf from "../assets/resume.pdf";
 
 export const personalInfo = {
@@ -116,6 +122,40 @@ export const skillTags = {
 };
 
 export const projects = [
+  {
+    title: "PolyGrep: Multithreaded Code Search Engine",
+    description:
+      "A multithreaded code search and word frequency engine in modern C++17. A recursive directory scan fans out across a bounded thread pool where each worker matches lines with Boyer-Moore-Horspool or regex and builds local frequency maps that merge under a lock, streaming matches back with live stats and cancellation. Has desktop front ends in Qt 6, MFC, and C# WPF plus WinForms via P/Invoke, along with a CLI, CMake/CTest builds, CI, and Windows releases.",
+    tech: ["C++17", "Qt 6", "MFC", "C#", "WPF", ".NET 8", "CMake"],
+    category: "Systems",
+    color: "indigo",
+    live: null,
+    github: "https://github.com/TakbirZaman/PolyGrep",
+    featured: true,
+  },
+  {
+    title: "ByteSpace: Course Platform Front End",
+    description:
+      "A course platform built from a Figma file, aiming for a pixel match on every frame. It covers home, a search page with filters, category tabs and pagination, course detail pages with about, lesson and review tabs, a creator profile, login and register with custom validation, and a 404. Routing is client side with react-router, the styling is plain CSS driven by the design tokens from the file, and it holds up from 375px up to 1440px.",
+    tech: ["React 19", "Vite", "React Router", "CSS", "Figma"],
+    category: "Front End",
+    color: "teal",
+    live: "https://bytespace-lime-phi.vercel.app",
+    github: "https://github.com/TakbirZaman/bytespace-new",
+    featured: true,
+    image: byteSpaceImg,
+  },
+  {
+    title: "AI Coding Agent: Gemini / OpenAI Tool Use",
+    description:
+      "An autonomous agent that takes a task, plans a way through it, edits real files, runs shell commands, and checks its work with tests. The loop runs up to 12 steps calling five tools through JSON schema function calling: read, list, write, edit, and shell. Files stay inside a workspace sandbox that blocks path escapes, and a denylist stops dangerous shell commands. It runs against Gemini, OpenAI, or a mock provider that needs no API key, ships with a pytest suite built around a mocked LLM, and installs as a CLI with a Dockerfile.",
+    tech: ["Python", "Gemini AI", "OpenAI", "pytest", "Docker"],
+    category: "AI/ML",
+    color: "violet",
+    live: null,
+    github: "https://github.com/TakbirZaman/Coding-Agent",
+    featured: true,
+  },
   {
     title: "TechCommerce: AI E-Commerce Platform",
     description:
@@ -225,13 +265,14 @@ export const projects = [
   {
     title: "RailView: OpenGL Railway Simulation",
     description:
-      "A 2D railway scene written in C++ with OpenGL and GLUT. Trains run along the track, clouds drift past, and you can switch between day and night. The hills, trees, street lamps, roads, and platforms are all built from OpenGL primitives, and the animation is driven from the keyboard.",
-    tech: ["C++", "OpenGL", "GLUT", "Animation"],
+      "A 2D railway scene in C++ on classic OpenGL with GLUT, drawn entirely from primitives with no textures. One clock running 0 to 24 hours drives everything: the sky gradient, sun and moon arcs, lamp glow, shadows, mist, and window light all follow the time of day. Two trains approach, brake at the platform, open their doors, and depart while passengers walk over and board. A keypress brings in rain, lightning, and wet ground, and a GLSL bloom and colour grade pass runs on top through an FBO, falling back cleanly if the GPU is too old.",
+    tech: ["C++", "OpenGL", "GLUT", "GLSL", "FBO"],
     category: "Graphics",
     color: "indigo",
     live: null,
-    github: "https://github.com/TakbirZaman/RailView---OpenGL-Railway-Simulation",
+    github: "https://github.com/TakbirZaman/RailView",
     featured: false,
+    image: railViewImg,
   },
   {
     title: "Apex Drift: Top Down Arcade Racer",
@@ -256,6 +297,54 @@ export const projects = [
     github: "https://github.com/TakbirZaman/beatMEE",
     featured: false,
     image: beatMeeImg,
+  },
+  {
+    title: "Universal Studio Toolkit",
+    description:
+      "A local-first desktop and mobile toolkit for preparing photos, signatures, scans and PDFs, with nothing ever uploaded to a server. It resizes images to exact pixel or physical mm/DPI dimensions, cleans signatures into transparent PNGs, merges and reorders PDFs with page numbers and watermarks, straightens scanned pages, and lays out batch photo prints. The UI is Flutter and the processing runs through a native Rust engine over typed async bindings, with PDFium and OpenCV adapters bundled.",
+    tech: ["Flutter", "Rust", "Dart", "flutter_rust_bridge", "PDFium", "OpenCV", "SQLite"],
+    category: "Systems",
+    color: "teal",
+    live: null,
+    github: "https://github.com/TakbirZaman/Universal-Studio-ToolKit",
+    featured: false,
+    image: universalStudioToolkitImg,
+  },
+  {
+    title: "LocalConnect: LAN File Transfer",
+    description:
+      "A LAN-only file transfer and remote screen control app, no cloud signaling, relays or TURN involved. Devices pair with a six-digit code authenticated by SPAKE2, transfer runs over rustls TLS with resumable 4 MiB chunks verified by SHA-256, and chunk recovery state lives in SQLite so a dropped connection resumes instead of restarting. Screen capture and input injection work across Windows, X11, Wayland portals and Android, with the UI in Flutter and the whole networking core in Rust.",
+    tech: ["Flutter", "Rust", "Tokio", "rustls", "SPAKE2", "SQLite", "Kotlin"],
+    category: "Systems",
+    color: "violet",
+    live: null,
+    github: "https://github.com/TakbirZaman/ConnectLocally",
+    featured: false,
+    image: localConnectImg,
+  },
+  {
+    title: "hookdesk: Webhook Gateway",
+    description:
+      "A webhook gateway for automation pipelines. Senders sign requests with HMAC-SHA256 over a timestamp and body, the API verifies in constant time with a five-minute replay window, and everything gets a fast 202 after persisting to a SQLite queue. A background worker delivers to targets like an n8n webhook node with exponential backoff plus full jitter, a dead-letter queue, an idempotency key that deduplicates redeliveries, and crash recovery that requeues stuck events on startup.",
+    tech: ["Python", "FastAPI", "SQLite", "HMAC", "n8n", "Docker"],
+    category: "Automation",
+    color: "amber",
+    live: null,
+    github: "https://github.com/TakbirZaman/hook-desk",
+    featured: false,
+    image: hookDeskImg,
+  },
+  {
+    title: "ClientFlow: Freelancer Client Ops",
+    description:
+      "Client operations for freelancers and agencies, from first proposal to final payment. It covers clients, projects, task and time tracking, invoice PDFs with a client portal, Stripe Connect checkout, signed proposals that convert to invoices, conditional automations, and white-labeling. Multi-tenancy is enforced in the database with PostgreSQL row-level security behind a restricted role, invoice changes write an outbox event in the same transaction, and an Expo mobile companion handles time logging on the go.",
+    tech: ["Next.js 15", "TypeScript", "PostgreSQL", "Prisma", "Redis", "BullMQ", "Stripe", "Expo"],
+    category: "Full Stack",
+    color: "indigo",
+    live: null,
+    github: "https://github.com/TakbirZaman/client-flow",
+    featured: false,
+    image: clientFlowImg,
   },
 ];
 
