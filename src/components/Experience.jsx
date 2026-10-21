@@ -21,7 +21,7 @@ export default function Experience() {
           </p>
           <h2 className="section-title">Experience</h2>
           <p className="section-subtitle">
-            Where I have worked so far and what I did there.
+            Hands-on experience building web applications and automating business workflows.
           </p>
         </motion.div>
 

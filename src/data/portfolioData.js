@@ -23,7 +23,7 @@ export const personalInfo = {
   name: "Takbir Zaman Bhuiyan",
   title: "Full-Stack Developer & AI Automation Engineer",
   tagline: "Full-Stack, AI/ML, Automation",
-  bio: "I finished my CSE degree at AIUB in 2026 with a 3.76 CGPA. Lately I have been building web apps with FastAPI and Next.js, and setting up automation workflows on n8n at WebtrixLab. Before that I was a software engineering intern at NN Services & Engineering, working mostly in React and REST APIs. I am looking for a full-time software engineering role, either in Dhaka or remote.",
+  bio: "I build full-stack web applications and AI automation workflows with FastAPI, Next.js, and n8n. I graduated from AIUB in 2026 with a BSc in Computer Science and Engineering and a CGPA of 3.76. My experience includes WebtrixLab and a software engineering internship at NNSEL. I am open to full-time software engineering roles in Dhaka and remotely.",
   location: "Dhaka, Bangladesh · Remote",
   email: "takbirzamanbhuiyan@gmail.com",
   phone: "+8801631107100",
@@ -85,16 +85,16 @@ export const education = [
 ];
 export const experience = [
   {
-    role: "AI Automation & Full Stack Developer",
+    role: "AI Automation & Full-Stack Developer",
     company: "WebtrixLab",
     location: "Dhaka, Bangladesh",
     period: "2025 to Present",
     type: "Part-time",
     highlights: [
-      "Build and ship n8n automation workflows that clients actually use day to day",
-      "Develop web apps end to end, from the interface down to the database",
-      "Set up automated content pipelines so client accounts keep posting without someone logging in to do it",
-      "Handle the whole project cycle, from the scoping call to deploying to production",
+      "Build and maintain n8n workflows that automate everyday client operations",
+      "Develop web applications from user interface to backend services and databases",
+      "Create automated content pipelines for scheduled publishing across client accounts",
+      "Manage projects from requirements gathering through production deployment",
     ],
     tech: ["Next.js", "React", "Node.js", "Express", "MongoDB", "n8n", "REST APIs", "Git & GitHub"],
   },
@@ -105,10 +105,10 @@ export const experience = [
     period: "Feb 2025 to May 2025",
     type: "Internship",
     highlights: [
-      "Built and maintained the React components their client dashboards ran on",
-      "Wired up REST APIs in Node.js and Express to feed those components",
-      "Cut page load time by trimming render work and removing redundant API calls",
-      "Worked in sprints, with code reviews and a standup every morning",
+      "Built and maintained reusable React components for client dashboards",
+      "Developed and integrated REST APIs using Node.js and Express",
+      "Improved page performance by reducing unnecessary renders and redundant API calls",
+      "Collaborated through development sprints, code reviews, and daily standups",
     ],
     tech: ["React", "Node.js", "Express", "REST APIs", "PostgreSQL", "Git & GitHub"],
   },
@@ -125,7 +125,7 @@ export const projects = [
   {
     title: "PolyGrep: Multithreaded Code Search Engine",
     description:
-      "A multithreaded code search and word frequency engine in modern C++17. A recursive directory scan fans out across a bounded thread pool where each worker matches lines with Boyer-Moore-Horspool or regex and builds local frequency maps that merge under a lock, streaming matches back with live stats and cancellation. Has desktop front ends in Qt 6, MFC, and C# WPF plus WinForms via P/Invoke, along with a CLI, CMake/CTest builds, CI, and Windows releases.",
+      "A C++17 code search engine with a bounded thread pool, Boyer–Moore–Horspool and regex matching, word frequency analysis, live statistics, and cancellation. Includes a CLI and desktop interfaces in Qt 6, MFC, WPF, and WinForms, with CMake builds, automated tests, and Windows releases.",
     tech: ["C++17", "Qt 6", "MFC", "C#", "WPF", ".NET 8", "CMake"],
     category: "Systems",
     color: "indigo",
@@ -136,7 +136,7 @@ export const projects = [
   {
     title: "ByteSpace: Course Platform Front End",
     description:
-      "A course platform built from a Figma file, aiming for a pixel match on every frame. It covers home, a search page with filters, category tabs and pagination, course detail pages with about, lesson and review tabs, a creator profile, login and register with custom validation, and a 404. Routing is client side with react-router, the styling is plain CSS driven by the design tokens from the file, and it holds up from 375px up to 1440px.",
+      "A responsive course platform frontend built from Figma designs. Includes course search and filtering, pagination, course details, creator profiles, and login and registration forms with validation. Uses React Router and design tokens, with layouts for screens from 375px to 1440px.",
     tech: ["React 19", "Vite", "React Router", "CSS", "Figma"],
     category: "Front End",
     color: "teal",
@@ -148,7 +148,7 @@ export const projects = [
   {
     title: "AI Coding Agent: Gemini / OpenAI Tool Use",
     description:
-      "An autonomous agent that takes a task, plans a way through it, edits real files, runs shell commands, and checks its work with tests. The loop runs up to 12 steps calling five tools through JSON schema function calling: read, list, write, edit, and shell. Files stay inside a workspace sandbox that blocks path escapes, and a denylist stops dangerous shell commands. It runs against Gemini, OpenAI, or a mock provider that needs no API key, ships with a pytest suite built around a mocked LLM, and installs as a CLI with a Dockerfile.",
+      "A Python coding agent that plans tasks, edits workspace files, runs shell commands, and checks results with tests. Supports Gemini, OpenAI, and a mock provider, with a 12-step execution limit, workspace path checks, and command restrictions. Includes a CLI, Dockerfile, and mocked-provider tests.",
     tech: ["Python", "Gemini AI", "OpenAI", "pytest", "Docker"],
     category: "AI/ML",
     color: "violet",
@@ -159,7 +159,7 @@ export const projects = [
   {
     title: "TechCommerce: AI E-Commerce Platform",
     description:
-      "An online store built with FastAPI and Next.js. It runs 69 products across 14 categories, with JWT login, a cart that survives a page refresh, coupons, order tracking, and an admin panel for products, orders, coupons, customers, and delivery zones. I also built an AI Advisor that recommends products from a typed question, a PC Builder that flags incompatible parts, and a side by side compare view.",
+      "An e-commerce platform built with FastAPI and Next.js, featuring authentication, a persistent cart, coupons, order tracking, and an administration dashboard. Includes an AI product advisor, a PC builder with compatibility checks, and product comparisons.",
     tech: ["FastAPI", "Next.js", "TypeScript", "SQLAlchemy", "Tailwind CSS", "JWT"],
     category: "Full Stack",
     color: "teal",
@@ -171,7 +171,7 @@ export const projects = [
   {
     title: "Construction Tracker",
     description:
-      "A project tracker for construction sites. Site managers use it to plan the work, assign tasks, watch the budget, log delivered materials, and coordinate the crew, with role based access so everyone sees the part that is theirs. The numbers update live instead of waiting for a refresh.",
+      "A construction management application for planning work, assigning tasks, tracking budgets and material deliveries, and coordinating site teams. Includes role-based access and live updates.",
     tech: ["React", "Node.js", "Express", "PostgreSQL"],
     category: "Full Stack",
     color: "teal",
@@ -183,7 +183,7 @@ export const projects = [
   {
     title: "RidePrice BD Fare Estimator",
     description:
-      "A fare estimator for rides around Dhaka. I trained a regression model on local transport data, then moved the model into the browser so the estimate comes back without a round trip to a server. It reads distance, current demand, weather, and peak hour multipliers, and it covers more than 76 locations.",
+      "A browser-based fare estimator for Dhaka, powered by a regression model trained on local transport data. Estimates fares using distance, demand, weather, and peak-hour factors across more than 76 locations.",
     tech: ["Python", "scikit-learn", "JavaScript", "Netlify"],
     category: "AI/ML",
     color: "teal",
@@ -195,7 +195,7 @@ export const projects = [
   {
     title: "Task Manager",
     description:
-      "A task manager where JWT login keeps each person's tasks to themselves. You can filter, sort, export to CSV, and check a small stats panel. The front end is a React SPA, the back end is an Express REST API on PostgreSQL, and I wrote the SQL by hand with parameterized queries rather than pulling in an ORM.",
+      "A full-stack task manager with JWT authentication, private task lists, filtering, sorting, CSV export, and summary statistics. Built with React, Express, and PostgreSQL, using parameterized SQL queries.",
     tech: ["React 19", "Node.js", "Express", "PostgreSQL", "JWT", "Tailwind CSS", "Docker"],
     category: "Full Stack",
     color: "indigo",
@@ -207,7 +207,7 @@ export const projects = [
   {
     title: "Air Canvas: Hand Tracking Drawing Board",
     description:
-      "Draw on your webcam with your hand. Pinch to draw, open your palm to erase, two fingers to undo, a fist to wipe the canvas. Three stacked canvases keep the strokes from flickering, points get joined with quadratic curves so the lines come out smooth, and the app shows live FPS along with the hand tracker's confidence score.",
+      "A webcam-based drawing application with hand gesture controls for drawing, erasing, undoing, and clearing the canvas. Uses MediaPipe hand tracking, layered canvases, and smooth curve rendering, with live frame rate and tracking confidence indicators.",
     tech: ["Next.js", "MediaPipe", "TypeScript", "Tailwind CSS", "Canvas API"],
     category: "AI/ML",
     color: "violet",
@@ -219,7 +219,7 @@ export const projects = [
   {
     title: "Dhaka Traffic Predictor",
     description:
-      "A traffic prediction app for Dhaka routes. People report congestion when they see it, and the app mixes those reports with history to guess what a route will look like later. Gemini writes a short plain explanation for each guess. Redis caches the results and BullMQ runs the heavier aggregation in the background. The interface is styled after a rickshaw meter.",
+      "A Dhaka traffic prediction application combining community congestion reports with historical data. Uses Gemini for plain-language explanations, Redis for caching, and BullMQ for background aggregation, with an interface inspired by rickshaw meters.",
     tech: ["Next.js", "Express", "TypeScript", "MongoDB", "Redis", "Gemini AI"],
     category: "AI/ML",
     color: "indigo",
@@ -231,7 +231,7 @@ export const projects = [
   {
     title: "RAG Chatbot for Document Q&A",
     description:
-      "A chatbot that answers questions about PDFs you upload. Finding the right passage is plain TF-IDF cosine similarity written in Python, no vector database involved. Gemini writes the answer, but only from the chunks that actually matched, so it stays tied to the document.",
+      "A document question-answering chatbot that retrieves PDF passages using TF-IDF and cosine similarity. Uses the retrieved passages as context for Gemini-generated answers, without requiring a vector database.",
     tech: ["Python", "Streamlit", "Gemini AI", "RAG"],
     category: "AI/ML",
     color: "indigo",
@@ -243,7 +243,7 @@ export const projects = [
   {
     title: "Churn Radar",
     description:
-      "Predicts which customers are about to leave. You can score a single record or upload a whole CSV. The model is a Random Forest in scikit-learn, served through FastAPI, sitting at an ROC-AUC of 0.80. The Next.js dashboard builds its own form fields straight from the model schema, so swapping in a new dataset does not mean rewriting the front end.",
+      "A customer churn prediction application with individual and CSV batch scoring. A Random Forest model served through FastAPI achieves an ROC-AUC of 0.80. The Next.js dashboard generates input fields from the model schema.",
     tech: ["Next.js", "TypeScript", "FastAPI", "scikit-learn", "Tailwind CSS"],
     category: "AI/ML",
     color: "violet",
@@ -254,7 +254,7 @@ export const projects = [
   {
     title: "n8n Automation Workflows",
     description:
-      "Five n8n workflows that run in production. A Messenger bot that remembers what you told it earlier, a Facebook Page auto responder that looks at images with Gemini Vision, a Gmail pipeline that scores and logs job applicants, a scheduled Telegram bot for new job alerts, and an LLM that drafts replies to email. They talk to the Gmail, Telegram, and Google Sheets APIs.",
+      "Five n8n automation workflows for conversational messaging, image-aware Facebook replies, applicant screening, Telegram job alerts, and email reply drafting. Integrates Gemini with Gmail, Telegram, and Google Sheets APIs.",
     tech: ["n8n", "Gemini AI", "Gmail API", "Telegram API", "Google Sheets"],
     category: "Automation",
     color: "amber",
@@ -265,7 +265,7 @@ export const projects = [
   {
     title: "RailView: OpenGL Railway Simulation",
     description:
-      "A 2D railway scene in C++ on classic OpenGL with GLUT, drawn entirely from primitives with no textures. One clock running 0 to 24 hours drives everything: the sky gradient, sun and moon arcs, lamp glow, shadows, mist, and window light all follow the time of day. Two trains approach, brake at the platform, open their doors, and depart while passengers walk over and board. A keypress brings in rain, lightning, and wet ground, and a GLSL bloom and colour grade pass runs on top through an FBO, falling back cleanly if the GPU is too old.",
+      "A C++ and OpenGL railway simulation with a day-and-night cycle, animated trains and passengers, weather effects, and dynamic lighting. Includes GLSL bloom and color grading, with a fallback for older graphics hardware.",
     tech: ["C++", "OpenGL", "GLUT", "GLSL", "FBO"],
     category: "Graphics",
     color: "indigo",
@@ -277,7 +277,7 @@ export const projects = [
   {
     title: "Apex Drift: Top Down Arcade Racer",
     description:
-      "A top down arcade racer in React and Canvas. The cars drift through corners, WASD or the arrow keys steer, and two people can race on the same keyboard. Coins and garage upgrades are saved to localStorage, and the car designs are loosely based on supercars.",
+      "A top-down arcade racing game built with React and Canvas. Features drifting, keyboard controls, local two-player racing, collectible coins, and garage upgrades saved in the browser.",
     tech: ["React", "Canvas API", "Vite", "JavaScript", "Tailwind CSS"],
     category: "Game Dev",
     color: "amber",
@@ -289,7 +289,7 @@ export const projects = [
   {
     title: "beatMEE: Browser Fighting Game",
     description:
-      "A 2D fighting game built in React and HTML5 Canvas, with no game engine underneath. The AI raises or lowers its difficulty based on how the round is going, combos chain into each other, hits get a short screen shake, and the touch controls are set up properly for playing on a phone.",
+      "A 2D browser fighting game built with React and HTML5 Canvas. Features adaptive AI difficulty, combo attacks, impact effects, and touch controls for mobile play.",
     tech: ["React", "Canvas API", "Vite", "Game Dev"],
     category: "Game Dev",
     color: "amber",
@@ -301,7 +301,7 @@ export const projects = [
   {
     title: "Universal Studio Toolkit",
     description:
-      "A local-first desktop and mobile toolkit for preparing photos, signatures, scans and PDFs, with nothing ever uploaded to a server. It resizes images to exact pixel or physical mm/DPI dimensions, cleans signatures into transparent PNGs, merges and reorders PDFs with page numbers and watermarks, straightens scanned pages, and lays out batch photo prints. The UI is Flutter and the processing runs through a native Rust engine over typed async bindings, with PDFium and OpenCV adapters bundled.",
+      "A local-first toolkit for preparing photos, signatures, scans, and PDFs. Supports precise image sizing, transparent signature preparation, PDF merging and reordering, watermarks, scan correction, and batch photo print layouts. Built with Flutter and a native Rust processing engine.",
     tech: ["Flutter", "Rust", "Dart", "flutter_rust_bridge", "PDFium", "OpenCV", "SQLite"],
     category: "Systems",
     color: "teal",
@@ -313,7 +313,7 @@ export const projects = [
   {
     title: "LocalConnect: LAN File Transfer",
     description:
-      "A LAN-only file transfer and remote screen control app, no cloud signaling, relays or TURN involved. Devices pair with a six-digit code authenticated by SPAKE2, transfer runs over rustls TLS with resumable 4 MiB chunks verified by SHA-256, and chunk recovery state lives in SQLite so a dropped connection resumes instead of restarting. Screen capture and input injection work across Windows, X11, Wayland portals and Android, with the UI in Flutter and the whole networking core in Rust.",
+      "A LAN-based file transfer and remote control application built with Flutter and Rust. Supports code-based pairing, encrypted transfers, resumable chunks with SHA-256 verification, and persistent recovery state. Includes screen capture and input support across desktop and Android platforms.",
     tech: ["Flutter", "Rust", "Tokio", "rustls", "SPAKE2", "SQLite", "Kotlin"],
     category: "Systems",
     color: "violet",
@@ -325,7 +325,7 @@ export const projects = [
   {
     title: "hookdesk: Webhook Gateway",
     description:
-      "A webhook gateway for automation pipelines. Senders sign requests with HMAC-SHA256 over a timestamp and body, the API verifies in constant time with a five-minute replay window, and everything gets a fast 202 after persisting to a SQLite queue. A background worker delivers to targets like an n8n webhook node with exponential backoff plus full jitter, a dead-letter queue, an idempotency key that deduplicates redeliveries, and crash recovery that requeues stuck events on startup.",
+      "A webhook gateway that verifies HMAC-SHA256 signatures and queues events for background delivery. Includes replay protection, retries with exponential backoff, a dead-letter queue, idempotency checks, and recovery of interrupted deliveries.",
     tech: ["Python", "FastAPI", "SQLite", "HMAC", "n8n", "Docker"],
     category: "Automation",
     color: "amber",
@@ -337,7 +337,7 @@ export const projects = [
   {
     title: "ClientFlow: Freelancer Client Ops",
     description:
-      "Client operations for freelancers and agencies, from first proposal to final payment. It covers clients, projects, task and time tracking, invoice PDFs with a client portal, Stripe Connect checkout, signed proposals that convert to invoices, conditional automations, and white-labeling. Multi-tenancy is enforced in the database with PostgreSQL row-level security behind a restricted role, invoice changes write an outbox event in the same transaction, and an Expo mobile companion handles time logging on the go.",
+      "A client operations platform for freelancers and agencies, covering proposals, projects, tasks, time tracking, invoices, and payments. Includes a client portal, Stripe Connect, conditional automations, white-labeling, database-enforced tenant isolation, and an Expo mobile companion.",
     tech: ["Next.js 15", "TypeScript", "PostgreSQL", "Prisma", "Redis", "BullMQ", "Stripe", "Expo"],
     category: "Full Stack",
     color: "indigo",
@@ -351,7 +351,7 @@ export const projects = [
 export const research = [
   {
     title: "Sentiment-Based Product Grouping",
-    description: "Grouped products by the sentiment in their reviews. The reviews went through TF-IDF first, then DBSCAN to cluster them, with PCA pulling the dimensions down so the clusters were actually readable.",
+    description: "Grouped products by review sentiment using TF-IDF features and DBSCAN clustering, with PCA for dimensionality reduction and cluster visualization.",
     tags: ["NLP", "TF-IDF", "DBSCAN", "PCA"],
     metrics: { method: "DBSCAN", vectorizer: "TF-IDF", reduction: "PCA" },
     status: "Research Project",
@@ -359,7 +359,7 @@ export const research = [
   },
   {
     title: "Explainable Osteoporosis Detection System",
-    description: "A DenseNet121 model for spotting osteoporosis in scans, sitting at 87.5% recall. I added SE Attention and used Grad-CAM so the model can point at the part of the image that drove each prediction.",
+    description: "Developed an osteoporosis detection model using DenseNet121 and SE attention, achieving 87.5% recall. Used Grad-CAM to visualize the image regions contributing to each prediction.",
     tags: ["DenseNet121", "Grad-CAM", "XAI"],
     metrics: { recall: "87.5%" },
     status: "Research Project",
@@ -367,7 +367,7 @@ export const research = [
   },
   {
     title: "Waste Image Classification Using EfficientNet-B3",
-    description: "An EfficientNet-B3 classifier for waste images that hit 94% accuracy. I ran it against a few other architectures on the same dataset before settling on this one.",
+    description: "Compared image classification architectures on a shared waste dataset and selected EfficientNet-B3, which achieved 94% accuracy.",
     tags: ["EfficientNet-B3", "Transfer Learning"],
     metrics: { accuracy: "94%" },
     status: "Research Project",
@@ -375,7 +375,7 @@ export const research = [
   },
   {
     title: "Brain Tumor Segmentation & Classification",
-    description: "A model that classifies and segments brain tumors in MRI scans, reaching 95.6% accuracy across the tumor classes.",
+    description: "Developed a deep learning model for brain tumor segmentation and classification in MRI scans, achieving 95.6% classification accuracy.",
     tags: ["Deep Learning", "MRI"],
     metrics: { accuracy: "95.6%" },
     status: "Research Project",

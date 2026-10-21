@@ -62,19 +62,21 @@ export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "", honeypot: "" });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
-  const [copied, setCopied] = useState(false);
+  const [copyStatus, setCopyStatus] = useState({ email: "", draft: "" });
+  const [mailError, setMailError] = useState(false);
 
   const validate = () => {
     const e = {};
-    if (!form.name.trim() || form.name.trim().length < 2) e.name = "Please enter your name (min 2 chars).";
+    if (!form.name.trim() || form.name.trim().length < 2) e.name = "Please enter at least 2 characters for your name.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = "Enter a valid email address.";
-    if (!form.message.trim() || form.message.trim().length < 10) e.message = "Message should be at least 10 characters.";
+    if (!form.message.trim() || form.message.trim().length < 10) e.message = "Please write a message of at least 10 characters.";
     if (form.honeypot) e.honeypot = "Spam detected.";
     return e;
   };
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setCopyStatus((prev) => ({ ...prev, draft: "" }));
     if (errors[e.target.name]) setErrors((prev) => ({ ...prev, [e.target.name]: undefined }));
   };
 
@@ -82,27 +84,32 @@ export default function Contact() {
     e.preventDefault();
     const validation = validate();
     if (Object.keys(validation).length) { setErrors(validation); return; }
-    const subject = encodeURIComponent(`Portfolio inquiry from ${form.name}`);
-    const body = encodeURIComponent(`Hi Takbir,\n\n${form.message}\n\n${form.name}\n${form.email}`);
-    const mailto = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
-    // Try to open mail client; fallback to copy + toast if blocked
-    try {
-      window.location.href = mailto;
-    } catch {
-      navigator.clipboard?.writeText(`Subject: Portfolio inquiry from ${form.name}\n\n${form.message}\n\n${form.name}\n${form.email}`);
-    }
+    setMailError(false);
+    setCopyStatus((prev) => ({ ...prev, draft: "" }));
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 8000);
-    setForm({ name: "", email: "", message: "", honeypot: "" });
+    // Browsers cannot confirm that a mail app opened or that an email was sent.
+    // Keep the form intact so the visitor can edit or copy the same draft.
+    try {
+      window.location.href = `mailto:${personalInfo.email}?subject=${encodeURIComponent(draftSubject)}&body=${encodeURIComponent(draftBody)}`;
+    } catch {
+      setMailError(true);
+    }
   };
 
-  const copyEmail = async () => {
-    try { await navigator.clipboard.writeText(personalInfo.email); setCopied(true); setTimeout(()=>setCopied(false),2000);} catch { setCopied(false); }
+  const draftSubject = `Portfolio inquiry from ${form.name.trim()}`;
+  const draftBody = `Hi Takbir,\n\n${form.message.trim()}\n\n${form.name.trim()}\n${form.email.trim()}`;
+  const draft = `To: ${personalInfo.email}\nSubject: ${draftSubject}\n\n${draftBody}`;
+
+  const copyText = async (text, kind) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopyStatus((prev) => ({ ...prev, [kind]: "success" }));
+    } catch {
+      setCopyStatus((prev) => ({ ...prev, [kind]: "error" }));
+    }
   };
-  const copyDraft = async () => {
-    const draft = `Hi Takbir,\n\n${form.message || "[your message]"}\n\n${form.name || "[your name]"}\n${form.email || "[your email]"}`;
-    try { await navigator.clipboard.writeText(draft); setCopied(true); setTimeout(()=>setCopied(false),2000);} catch {}
-  };
+  const copyEmail = () => copyText(personalInfo.email, "email");
+  const copyDraft = () => copyText(draft, "draft");
 
   return (
     <section id="contact" className="section-padding bg-white" ref={ref}>
@@ -119,7 +126,7 @@ export default function Contact() {
           </p>
           <h2 className="section-title text-4xl font-bold">Contact Me</h2>
           <p className="section-subtitle max-w-lg mx-auto text-slate-500 mt-4">
-            Email is the fastest way to reach me. If you have a role, a project, or just a question, send it over.
+            Have a role, a project, or a question in mind? I would be glad to hear from you.
           </p>
         </motion.div>
 
@@ -131,15 +138,18 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <h3 className="font-display text-xl font-bold text-slate-900 mb-2">
-              Tell me what you are working on
+              Let’s discuss your next project
             </h3>
             <p className="text-slate-500 mb-4 leading-relaxed">
-              I am open to <strong className="text-slate-800">full stack and AI automation</strong> roles, in Dhaka or remote. Email works best, and I usually reply the same day.
+              I am open to <strong className="text-slate-800">full-stack development and AI automation</strong> opportunities in Dhaka and remotely. Email is the best way to reach me.
             </p>
             <button onClick={copyEmail} className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-primary-700 bg-primary-50 border border-primary-200 px-3 py-1.5 rounded-full hover:bg-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400">
-              <Copy size={14} /> {copied ? "Copied!" : "Copy email"}: {personalInfo.email}
+              <Copy size={14} /> {copyStatus.email === "success" ? "Email copied" : "Copy email"}: {personalInfo.email}
             </button>
 
+            <p role="status" aria-live="polite" className="text-sm text-slate-600 mb-4">
+              {copyStatus.email === "error" ? `Could not copy the email address. Please select it manually: ${personalInfo.email}` : ""}
+            </p>
             <div className="grid gap-4">
               {contactLinks.map(({ icon: Icon, label, value, href, color, border }) => (
                 <div key={label}>
@@ -192,10 +202,13 @@ export default function Contact() {
                   <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mb-4">
                     <CheckCircle2 size={32} className="text-teal-600" />
                   </div>
-                  <h4 className="font-display font-bold text-xl text-slate-900 mb-2">Opening your email app…</h4>
-                  <p className="text-slate-500 text-sm">Your message went to your default mail app. If nothing opened, I copied the draft, so you can paste it into Gmail or Outlook. You can also email me directly at <a href={`mailto:${personalInfo.email}`} className="text-primary-700 underline">{personalInfo.email}</a>.</p>
-                  <div className="flex gap-3 mt-4">
-                    <button onClick={()=>setSubmitted(false)} className="text-sm bg-white border border-slate-200 px-4 py-2 rounded-xl hover:bg-slate-50">Send another</button>
+                  <h4 className="font-display font-bold text-xl text-slate-900 mb-2">Your email draft is ready</h4>
+                  <p className="text-slate-500 text-sm">Complete and send your message in your email app. If no app opened, copy the draft below and paste it into Gmail, Outlook, or another email service. Send it to <a href={`mailto:${personalInfo.email}`} className="text-primary-700 underline">{personalInfo.email}</a>.</p>
+                  {mailError && <p className="text-sm text-slate-600 mt-3">Your browser could not open an email app. You can still copy your draft below.</p>}
+                  <label htmlFor="contact-draft" className="text-sm font-semibold text-slate-700 mt-5 mb-2 self-start">Your draft</label>
+                  <textarea id="contact-draft" readOnly value={draft} rows={7} className="w-full rounded-xl border border-slate-200 bg-white p-3 text-sm text-slate-700" />
+                  <div className="flex flex-wrap gap-3 mt-4">
+                    <button onClick={()=>setSubmitted(false)} className="text-sm bg-white border border-slate-200 px-4 py-2 rounded-xl hover:bg-slate-50">Edit message</button>
                     <button onClick={copyDraft} className="text-sm bg-teal-600 text-white px-4 py-2 rounded-xl hover:bg-teal-700 flex items-center gap-1.5"><Copy size={14}/> Copy draft</button>
                   </div>
                 </motion.div>
@@ -212,7 +225,7 @@ export default function Contact() {
                       required
                       aria-invalid={!!errors.name}
                       aria-describedby={errors.name ? "error-name" : undefined}
-                      placeholder="Takbir Zaman"
+                      placeholder="Your full name"
                       autoComplete="name"
                       className={`w-full px-4 py-3 rounded-xl border focus:ring-2 focus:border-transparent outline-none transition-all text-sm ${errors.name ? "border-red-300 focus:ring-red-400" : "border-slate-200 focus:ring-teal-500"}`}
                     />
@@ -259,13 +272,17 @@ export default function Contact() {
                   <div className="flex gap-3">
                     <button type="submit" className="flex-1 flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-xl transition-colors shadow-lg shadow-teal-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-teal-600">
                       <Send size={16} />
-                      Send via Email
+                      Open email app
                     </button>
-                    <button type="button" onClick={copyDraft} className="px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 flex items-center gap-1.5 text-sm font-semibold"><Copy size={14}/> Copy</button>
+                    <button type="button" onClick={copyDraft} className="px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 flex items-center gap-1.5 text-sm font-semibold"><Copy size={14}/> Copy draft</button>
                   </div>
-                  <p className="text-xs text-slate-400 text-center">This opens your email app, and nothing gets stored on the site. If it gets blocked, use the Copy button instead. <a href={`mailto:${personalInfo.email}`} className="underline text-slate-600">Email me directly</a>.</p>
+                  <p className="text-xs text-slate-400 text-center">This opens a draft in your email app. You will need to send it there. Your message is not submitted to this website. <a href={`mailto:${personalInfo.email}`} className="underline text-slate-600">Email me directly</a>.</p>
                 </form>
               )}
+              <p role="status" aria-live="polite" className="text-sm text-slate-600 mt-3">
+                {copyStatus.draft === "success" && "Draft copied. Paste it into your email app to send it."}
+                {copyStatus.draft === "error" && (submitted ? "Could not copy the draft. Select the text above and copy it manually." : "Could not copy the draft. Your text is still in the form; you can select and copy it manually.")}
+              </p>
             </div>
           </motion.div>
         </div>

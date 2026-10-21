@@ -46,7 +46,7 @@ export default function Projects() {
         >
           <p className="text-violet-600 font-semibold text-sm tracking-widest uppercase mb-3">Portfolio</p>
           <h2 className="section-title">Projects</h2>
-          <p className="section-subtitle">Most of these I built on my own. A couple came out of client work.</p>
+          <p className="section-subtitle">A selection of personal projects and client work across full-stack development, AI, automation, and systems programming.</p>
         </motion.div>
 
         {/* Filter tabs */}
@@ -229,7 +229,7 @@ export default function Projects() {
           </div>
         )}
         {filtered.length === 0 && (
-          <p className="text-center text-slate-400 text-sm mt-8">Nothing filed under this category yet.</p>
+          <p className="text-center text-slate-400 text-sm mt-8">No projects in this category yet.</p>
         )}
       </div>
     </section>

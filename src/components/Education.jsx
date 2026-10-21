@@ -25,7 +25,7 @@ export default function Education() {
         >
           <p className="text-primary-600 font-semibold text-sm tracking-widest uppercase mb-3">Academic Background</p>
           <h2 className="section-title">Education</h2>
-          <p className="section-subtitle">Where I studied and what I spent most of my time on.</p>
+          <p className="section-subtitle">My academic qualifications, relevant coursework, and achievements.</p>
         </motion.div>
 
         <div className="max-w-3xl mx-auto space-y-6">

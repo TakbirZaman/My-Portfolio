@@ -87,18 +87,18 @@ export default function About() {
           >
             <p className="text-primary-600 font-semibold text-sm tracking-widest uppercase mb-3">About Me</p>
             <h2 className="section-title mb-5">
-              Most of my work is AI, automation,<br />
-              <span className="gradient-text">and the web apps that sit behind them.</span>
+              Building useful software with<br />
+              <span className="gradient-text">AI, automation, and the web.</span>
             </h2>
 
             <p className="text-slate-600 leading-relaxed mb-4">
-              I finished my Computer Science and Engineering degree at <strong className="text-slate-800">AIUB</strong> with a CGPA of <strong className="text-primary-600">3.76</strong>. What I enjoy most is the stretch where an idea turns into something a person can open and use, so my projects usually end up with machine learning, a backend, and a real interface in the same repository.
+              I graduated from <strong className="text-slate-800">AIUB</strong> with a degree in Computer Science and Engineering and a CGPA of <strong className="text-primary-600">3.76</strong>. I enjoy turning ideas into practical software, connecting machine learning models, backend services, and intuitive interfaces.
             </p>
             <p className="text-slate-600 leading-relaxed mb-6">
-              At <strong className="text-slate-800">WebtrixLab</strong> I build n8n workflows with Gemini and full stack apps on Next.js, FastAPI, and Node. Before that I interned at <strong className="text-slate-800">NN Services & Engineering Ltd (NNSEL)</strong>, where I worked on React components and REST APIs and spent a lot of time on performance. The recent ones I am happy to walk anyone through: <strong className="text-slate-800">TechCommerce</strong> (a store with an AI advisor and a PC builder), <strong className="text-slate-800">Air Canvas</strong> (drawing with your hand through the webcam), <strong className="text-slate-800">RidePrice BD</strong>, <strong className="text-slate-800">Task Manager</strong>, and <strong className="text-slate-800">Construction Tracker</strong>.
+              At <strong className="text-slate-800">WebtrixLab</strong>, I develop n8n workflows with Gemini and web applications with Next.js, FastAPI, and Node.js. During my internship at <strong className="text-slate-800">NN Services & Engineering Ltd. (NNSEL)</strong>, I built React components, integrated REST APIs, and improved application performance. My projects include <strong className="text-slate-800">TechCommerce</strong>, <strong className="text-slate-800">Air Canvas</strong>, <strong className="text-slate-800">RidePrice BD</strong>, <strong className="text-slate-800">Task Manager</strong>, and <strong className="text-slate-800">Construction Tracker</strong>.
             </p>
             <p className="text-slate-600 leading-relaxed mb-8">
-              I like owning a feature from the first rough plan through deployment and the bug reports that follow. Right now I am looking for <strong className="text-slate-800">full stack or AI automation</strong> work, in Dhaka or remote.
+              I take ownership of features from planning and development through deployment and ongoing improvements. I am looking for <strong className="text-slate-800">full-stack development or AI automation</strong> opportunities in Dhaka and remotely.
             </p>
 
             {/* Highlights grid */}

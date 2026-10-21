@@ -20,7 +20,7 @@ export default function Research() {
         >
           <p className="text-violet-600 font-semibold text-sm tracking-widest uppercase mb-3">Academic Work</p>
           <h2 className="section-title">Research</h2>
-          <p className="section-subtitle">Coursework and final year projects, mostly around computer vision.</p>
+          <p className="section-subtitle">Academic projects exploring machine learning, computer vision, and natural language processing.</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">

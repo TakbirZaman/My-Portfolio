@@ -44,7 +44,7 @@ export default function Skills() {
           <p className="text-primary-600 font-semibold text-sm tracking-widest uppercase mb-3">Technical Expertise</p>
           <h2 className="section-title">Skills & Technologies</h2>
           <p className="section-subtitle mt-3 max-w-xl mx-auto">
-            These are the tools I actually reach for. C# and PHP are leftovers from early university projects.
+            Technologies I use across professional work, personal projects, and academic study.
           </p>
         </motion.div>
 
