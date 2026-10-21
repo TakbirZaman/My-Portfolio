@@ -14,7 +14,7 @@ export default function Footer() {
             <p className="font-display font-bold text-2xl text-white mb-1">
               TZ<span className="text-primary-400">.</span>
             </p>
-            <p className="text-sm">Takbir Zaman Bhuiyan · Full-Stack Developer · Dhaka, BD</p>
+            <p className="text-sm">{personalInfo.name} · {personalInfo.title} · Dhaka, Bangladesh</p>
           </div>
 
           {/* Nav links */}

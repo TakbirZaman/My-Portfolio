@@ -52,17 +52,19 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p {...fadeUp(0.3)} className="mt-4 text-xl md:text-2xl font-display font-semibold text-slate-700">
-              Full-Stack Developer · AI & Automation
+              {personalInfo.title}
             </motion.p>
 
             <motion.p {...fadeUp(0.4)} className="mt-5 text-slate-500 text-lg leading-relaxed max-w-lg">
               {personalInfo.bio}
             </motion.p>
 
+            <p className="mt-4 text-sm font-semibold text-primary-700">{personalInfo.tagline}</p>
+            <p className="mt-2 text-sm text-slate-600">AIUB graduate · 3.76 / 4.0 CGPA · Two-time Dean’s Award recipient</p>
             {/* CTA Buttons */}
             <motion.div {...fadeUp(0.5)} className="mt-8 flex flex-wrap gap-4">
               <a href="#projects" className="btn-primary">
-                View My Work
+                Explore Selected Work
                 <ArrowDown size={16} />
               </a>
               <a 
@@ -78,6 +80,7 @@ export default function Hero() {
               </a>
             </motion.div>
 
+            <a href="#contact" className="inline-block mt-5 text-sm font-semibold text-primary-700 underline underline-offset-4">Discuss a role</a>
             {/* Social Links */}
             <motion.div {...fadeUp(0.6)} className="mt-8 flex items-center gap-4">
               <span className="text-sm text-slate-400 font-medium">Find me on</span>

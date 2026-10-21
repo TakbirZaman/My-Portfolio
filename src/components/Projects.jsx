@@ -1,235 +1,263 @@
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
-import { FaGithub, FaStar } from "react-icons/fa";
+import { ExternalLink, ArrowUpRight } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import { projects } from "../data/portfolioData";
 
-const colorMap = {
-  teal:   { badge: "bg-teal-50 text-teal-700 border-teal-200", bar: "bg-teal-500", dot: "bg-teal-400" },
-  amber:  { badge: "bg-amber-50 text-amber-700 border-amber-200", bar: "bg-amber-500", dot: "bg-amber-400" },
-  indigo: { badge: "bg-primary-50 text-primary-700 border-primary-200", bar: "bg-primary-500", dot: "bg-primary-400" },
-  violet: { badge: "bg-violet-50 text-violet-700 border-violet-200", bar: "bg-violet-500", dot: "bg-violet-400" },
-};
+const categories = [
+  "All",
+  ...new Set(projects.map((project) => project.category)),
+];
+const featured = projects
+  .filter((project) => project.featured)
+  .sort((a, b) => a.caseStudy.rank - b.caseStudy.rank);
+const additional = projects.filter((project) => !project.featured);
 
-const allCategories = ["All", ...Array.from(new Set(projects.map((p) => p.category)))].sort((a, b) => (a === "All" ? -1 : b === "All" ? 1 : a.localeCompare(b)));
+function ProjectLinks({ project }) {
+  return (
+    <div className="flex flex-wrap items-center gap-4 text-sm font-semibold">
+      {project.live && (
+        <a
+          href={project.live}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-primary-700 hover:underline"
+          aria-label={`Open ${project.title} demo`}
+        >
+          <ExternalLink size={15} /> Open demo
+        </a>
+      )}
+      <a
+        href={project.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1.5 text-slate-700 hover:underline"
+        aria-label={`View ${project.title} source`}
+      >
+        <FaGithub size={15} /> Source code
+      </a>
+    </div>
+  );
+}
+
+function CaseStudy({ project }) {
+  const study = project.caseStudy;
+  return (
+    <details className="group/study mt-5 border-t border-slate-200 pt-4">
+      <summary className="cursor-pointer text-sm font-semibold text-primary-700 rounded focus-visible:outline-offset-4">
+        Read case study
+      </summary>
+      <div className="mt-5 space-y-5 text-sm text-slate-600 leading-relaxed">
+        <dl className="space-y-4">
+          {[
+            ["The problem", study.problem],
+            ["My contribution", study.contribution],
+            ["A key decision", study.decision],
+            ["What it demonstrates", study.result],
+            ["Scope and limitations", study.limit],
+          ].map(([label, value]) => (
+            <div key={label}>
+              <dt className="font-semibold text-slate-900 mb-1">{label}</dt>
+              <dd>{value}</dd>
+            </div>
+          ))}
+        </dl>
+        <div>
+          <h4 className="font-semibold text-slate-900 mb-2">
+            Try it or review the implementation
+          </h4>
+          <ol className="list-decimal pl-5 space-y-2">
+            {study.walkthrough.map((step) => (
+              <li key={step}>{step}</li>
+            ))}
+          </ol>
+        </div>
+        <div>
+          <h4 className="font-semibold text-slate-900 mb-2">
+            Supporting evidence
+          </h4>
+          <ul className="space-y-2">
+            {study.evidence.map((item) => (
+              <li key={item.url}>
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-700 underline underline-offset-4"
+                >
+                  {item.label}
+                  <ArrowUpRight
+                    size={13}
+                    className="inline ml-1"
+                    aria-hidden="true"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </details>
+  );
+}
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [showAll, setShowAll] = useState(false);
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.05 });
-
-  const filtered = activeFilter === "All" ? projects : projects.filter((p) => p.category === activeFilter);
-
-  const featured = projects.filter((p) => p.featured);
-  const nonFeatured = projects.filter((p) => !p.featured);
-
-  const showFeatured = activeFilter === "All";
-  // On "All": show 6 featured cards plus non-featured only when expanded
-  // On filtered view: paginate the filtered set
-  const gridProjects = showFeatured
-    ? (showAll ? nonFeatured : [])
-    : (showAll ? filtered : filtered.slice(0, 6));
-
-  const hasLive = (p) => p.live && p.live !== "#";
-  const hasGithub = (p) => p.github && !/^https:\/\/github\.com\/TakbirZaman\/?$/.test(p.github);
-
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0 });
+  const isAll = activeFilter === "All";
+  const filtered = isAll
+    ? additional
+    : projects.filter((project) => project.category === activeFilter);
+  const visible = isAll
+    ? showAll
+      ? filtered
+      : []
+    : showAll
+      ? filtered
+      : filtered.slice(0, 6);
   return (
-    <section id="projects" className="section-padding bg-slate-50" ref={ref}>
+    <section
+      id="projects"
+      className="section-padding bg-slate-50 scroll-mt-20"
+      ref={ref}
+    >
       <div className="container-max">
-        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+          className="mb-10"
         >
-          <p className="text-violet-600 font-semibold text-sm tracking-widest uppercase mb-3">Portfolio</p>
-          <h2 className="section-title">Projects</h2>
-          <p className="section-subtitle">A selection of personal projects and client work across full-stack development, AI, automation, and systems programming.</p>
+          <p className="text-primary-700 font-semibold text-sm tracking-widest uppercase mb-3">
+            Selected work
+          </p>
+          <h2 className="section-title">
+            Three projects. A closer look at how I build.
+          </h2>
+          <p className="section-subtitle max-w-3xl">
+            A full-stack storefront, a reliable webhook pipeline, and an
+            interactive vision application. Each case study explains the
+            problem, my work, and the engineering decisions behind it.
+          </p>
         </motion.div>
-
-        {/* Filter tabs */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex flex-wrap justify-center gap-2 mb-10"
+        <div
+          className="flex flex-wrap gap-2 mb-8"
+          role="group"
+          aria-label="Filter projects by category"
         >
-          {allCategories.map((cat) => (
+          {categories.map((category) => (
             <button
-              key={cat}
-              onClick={() => { setActiveFilter(cat); setShowAll(false); }}
-              aria-pressed={activeFilter === cat}
-              className={`px-3.5 py-1.5 rounded-full text-sm font-medium border transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 ${
-                activeFilter === cat
-                  ? "bg-primary-600 text-white border-primary-600 shadow-md"
-                  : "bg-white text-slate-600 border-slate-200 hover:border-primary-300 hover:text-primary-600"
-              }`}
+              key={category}
+              onClick={() => {
+                setActiveFilter(category);
+                setShowAll(false);
+              }}
+              aria-pressed={activeFilter === category}
+              className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${activeFilter === category ? "bg-primary-600 text-white border-primary-600" : "bg-white text-slate-700 border-slate-200 hover:border-primary-400"}`}
             >
-              {cat}
+              {category === "All" ? "Selected work" : category}
             </button>
           ))}
-        </motion.div>
-
-        {/* Featured projects (large cards) */}
-        {showFeatured && (
-          <div className="grid md:grid-cols-3 gap-6 mb-6">
-            {featured.map((project, idx) => {
-              const colors = colorMap[project.color] || colorMap.indigo;
-              return (
-                <motion.div
-                  key={project.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="card p-0 group relative overflow-hidden hover:-translate-y-1 flex flex-col"
-                >
-                  {/* Top color bar */}
-                  <div className={`absolute top-0 left-0 right-0 h-1 ${colors.bar} z-10`} />
-
-                  {/* Featured star */}
-                  <div className="absolute top-3 right-3 text-amber-400 z-10 drop-shadow">
-                    <FaStar size={14} />
-                  </div>
-
-                  {/* Project image */}
-                  {project.image ? (
-                    <div className="h-44 w-full overflow-hidden bg-slate-100">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                  ) : (
-                    <div className="h-1" />
-                  )}
-
-                  <div className="p-6 flex flex-col flex-1">
-                    <div className={`badge border mb-3 text-xs font-semibold ${colors.badge}`}>
-                      {project.category}
-                    </div>
-
-                    <h3 className="font-display text-lg font-bold text-slate-900 mb-2 group-hover:text-primary-600 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-slate-500 leading-relaxed mb-4">{project.description}</p>
-
-                    {/* Tech tags */}
-                    <div className="flex flex-wrap gap-1.5 mb-5">
-                      {project.tech.map((t) => (
-                        <span key={t} className="text-xs bg-slate-50 border border-slate-200 text-slate-600 px-2.5 py-0.5 rounded-full">
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Links */}
-                    <div className="flex items-center gap-3 mt-auto">
-                      {hasLive(project) && (
-                        <a
-                          href={project.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1.5 text-sm font-semibold text-primary-600 hover:text-primary-700"
-                        >
-                          <ExternalLink size={14} /> Live Demo
-                        </a>
-                      )}
-                      {hasGithub(project) && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1.5 text-sm text-slate-400 hover:text-slate-700 ml-auto"
-                        >
-                          <FaGithub size={14} /> Code
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        )}
-
-        {/* All other projects (compact list or filtered grid) */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {gridProjects.map((project, idx) => {
-            const colors = colorMap[project.color] || colorMap.indigo;
-            return (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 24 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.45, delay: idx * 0.07 }}
-                className="card p-0 group hover:-translate-y-0.5 overflow-hidden flex flex-col"
-              >
+        </div>
+        {isAll && (
+          <div className="grid lg:grid-cols-3 gap-6 items-start">
+            {featured.map((project) => (
+              <article key={project.title} className="card overflow-hidden">
                 {project.image && (
-                  <div className="h-36 w-full overflow-hidden bg-slate-100">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
+                  <img
+                    src={project.image}
+                    alt={`${project.title} interface`}
+                    loading="lazy"
+                    decoding="async"
+                    width="640"
+                    height="360"
+                    className="w-full aspect-video object-cover object-top border-b border-slate-100"
+                  />
                 )}
-                <div className="p-5 flex flex-col flex-1">
-                  <div className="flex items-start justify-between mb-3">
-                    <div className={`badge border text-xs font-medium ${colors.badge}`}>
-                      {project.category}
-                    </div>
-                    <div className="flex gap-2">
-                      {hasLive(project) && (
-                        <a href={project.live} target="_blank" rel="noopener noreferrer" aria-label="Live demo" className="text-slate-300 hover:text-primary-500 transition-colors">
-                          <ExternalLink size={15} />
-                        </a>
-                      )}
-                      {hasGithub(project) && (
-                        <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-slate-300 hover:text-slate-600 transition-colors">
-                          <FaGithub size={15} />
-                        </a>
-                      )}
-                    </div>
+                <div className="p-6">
+                  <div className="flex flex-wrap gap-2 text-xs font-medium mb-3">
+                    <span className="badge bg-primary-50 text-primary-700 text-xs">
+                      {project.caseStudy.kind}
+                    </span>
+                    <span className="badge bg-slate-100 text-slate-600 text-xs">
+                      {project.caseStudy.status}
+                    </span>
                   </div>
-
-                  <h3 className="font-display font-bold text-slate-900 mb-1.5 group-hover:text-primary-600 transition-colors">
+                  <h3 className="text-xl font-bold text-slate-900 leading-snug mb-3">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-slate-500 leading-relaxed mb-3">{project.description}</p>
-
-                  <div className="flex flex-wrap gap-1.5 mt-auto">
-                    {project.tech.slice(0, 4).map((t) => (
-                      <span key={t} className="text-xs bg-slate-50 border border-slate-100 text-slate-500 px-2 py-0.5 rounded-full">
-                        {t}
-                      </span>
+                  <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                    {project.caseStudy.problem}
+                  </p>
+                  <ul
+                    aria-label="Technologies"
+                    className="flex flex-wrap gap-2 mb-5"
+                  >
+                    {project.tech.slice(0, 4).map((tech) => (
+                      <li
+                        key={tech}
+                        className="text-xs text-slate-700 bg-slate-50 border border-slate-200 px-2 py-1 rounded"
+                      >
+                        {tech}
+                      </li>
                     ))}
-                  </div>
+                  </ul>
+                  <ProjectLinks project={project} />
+                  <CaseStudy project={project} />
                 </div>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Show more: only on All when there are hidden non-featured, or on filtered when more than 6 */}
-        {(showFeatured ? nonFeatured.length > 0 : filtered.length > 6) && (
-          <div className="text-center mt-8">
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
-            >
-              {showAll ? "Show Less" : showFeatured ? `Show All (${projects.length})` : `Show All (${filtered.length})`}
-            </button>
+              </article>
+            ))}
           </div>
         )}
-        {filtered.length === 0 && (
-          <p className="text-center text-slate-400 text-sm mt-8">No projects in this category yet.</p>
+        <div id="project-archive" className={visible.length ? "mt-10" : ""}>
+          {visible.length > 0 && (
+            <>
+              <h3 className="text-xl font-bold text-slate-900 mb-5">
+                {isAll ? "More projects" : `${activeFilter} projects`}
+              </h3>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {visible.map((project) => (
+                  <article
+                    key={project.title}
+                    className="card p-5 flex flex-col"
+                  >
+                    <p className="text-xs font-semibold text-primary-700 mb-2">
+                      {project.category}
+                    </p>
+                    <h4 className="font-bold text-slate-900 mb-2">
+                      {project.title}
+                    </h4>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-5">
+                      {project.description}
+                    </p>
+                    <div className="mt-auto">
+                      <ProjectLinks project={project} />
+                    </div>
+                    {project.caseStudy && <CaseStudy project={project} />}
+                  </article>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+        {(isAll || filtered.length > 6) && (
+          <div className="mt-8">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              aria-expanded={showAll}
+              aria-controls={
+                isAll || visible.length ? "project-archive" : undefined
+              }
+              className="btn-outline"
+            >
+              {showAll
+                ? "Show fewer projects"
+                : isAll
+                  ? `Explore ${additional.length} more projects`
+                  : `Show all ${filtered.length} projects`}
+            </button>
+          </div>
         )}
       </div>
     </section>

@@ -98,7 +98,7 @@ export default function About() {
               At <strong className="text-slate-800">WebtrixLab</strong>, I develop n8n workflows with Gemini and web applications with Next.js, FastAPI, and Node.js. During my internship at <strong className="text-slate-800">NN Services & Engineering Ltd. (NNSEL)</strong>, I built React components, integrated REST APIs, and improved application performance. My projects include <strong className="text-slate-800">TechCommerce</strong>, <strong className="text-slate-800">Air Canvas</strong>, <strong className="text-slate-800">RidePrice BD</strong>, <strong className="text-slate-800">Task Manager</strong>, and <strong className="text-slate-800">Construction Tracker</strong>.
             </p>
             <p className="text-slate-600 leading-relaxed mb-8">
-              I take ownership of features from planning and development through deployment and ongoing improvements. I am looking for <strong className="text-slate-800">full-stack development or AI automation</strong> opportunities in Dhaka and remotely.
+              I take ownership of features from planning and development through deployment and ongoing improvements. I am looking for <strong className="text-slate-800">junior full-stack development</strong> opportunities in Dhaka and remotely.
             </p>
 
             {/* Highlights grid */}

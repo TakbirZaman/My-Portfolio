@@ -22,10 +22,10 @@ export default function App() {
       <Navbar />
       <main id="main-content">
         <Hero />
+        <Suspense fallback={<SectionFallback />}><Projects /></Suspense>
         <Suspense fallback={<SectionFallback />}><About /></Suspense>
         <Suspense fallback={<SectionFallback />}><Skills /></Suspense>
         <Suspense fallback={<SectionFallback />}><Experience /></Suspense>
-        <Suspense fallback={<SectionFallback />}><Projects /></Suspense>
         <Suspense fallback={<SectionFallback />}><Research /></Suspense>
         <Suspense fallback={<SectionFallback />}><Education /></Suspense>
         <Suspense fallback={<SectionFallback />}><Contact /></Suspense>

@@ -141,7 +141,7 @@ export default function Contact() {
               Let’s discuss your next project
             </h3>
             <p className="text-slate-500 mb-4 leading-relaxed">
-              I am open to <strong className="text-slate-800">full-stack development and AI automation</strong> opportunities in Dhaka and remotely. Email is the best way to reach me.
+              I am open to <strong className="text-slate-800">junior full-stack development</strong> roles in Dhaka and remotely. My automation experience supports the same application and API work. Email is the best way to reach me.
             </p>
             <button onClick={copyEmail} className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-primary-700 bg-primary-50 border border-primary-200 px-3 py-1.5 rounded-full hover:bg-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400">
               <Copy size={14} /> {copyStatus.email === "success" ? "Email copied" : "Copy email"}: {personalInfo.email}

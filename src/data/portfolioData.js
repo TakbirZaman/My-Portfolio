@@ -21,13 +21,13 @@ import clientFlowImg from "../assets/client-flow.webp";
 
 export const personalInfo = {
   name: "Takbir Zaman Bhuiyan",
-  title: "Full-Stack Developer & AI Automation Engineer",
-  tagline: "Full-Stack, AI/ML, Automation",
-  bio: "I build full-stack web applications and AI automation workflows with FastAPI, Next.js, and n8n. I graduated from AIUB in 2026 with a BSc in Computer Science and Engineering and a CGPA of 3.76. My experience includes WebtrixLab and a software engineering internship at NNSEL. I am open to full-time software engineering roles in Dhaka and remotely.",
+  title: "Junior Full-Stack Developer",
+  tagline: "React · Next.js · Python · FastAPI",
+  bio: "I build web applications with React, Next.js, and Python, from user interfaces to APIs and databases. My experience includes a software engineering internship at NNSEL and full-stack development and automation work at WebtrixLab. I am looking for a junior full-stack role in Dhaka or remotely.",
   location: "Dhaka, Bangladesh · Remote",
   email: "takbirzamanbhuiyan@gmail.com",
   phone: "+8801631107100",
-  website: "https://takbirzaman.github.io",
+  website: "https://takbirzamanbhuiyan-portfolio.vercel.app",
   github: "https://github.com/TakbirZaman",
   linkedin: "https://www.linkedin.com/in/takbir-zaman-bhuiyan/",
   resumeUrl: "/TakbirZamanBhuiyan_Resume.pdf",
@@ -41,7 +41,7 @@ export const personalInfo = {
 
 export const stats = [
   { label: "CGPA", value: "3.76", suffix: "/4.0" },
-  { label: "Projects Built", value: "22", suffix: "+" },
+  { label: "Case Studies", value: "3", suffix: "" },
   { label: "Dean's Awards", value: "2", suffix: "×" },
   { label: "Research Projects", value: "4", suffix: "" },
 ];
@@ -91,7 +91,7 @@ export const experience = [
     period: "2025 to Present",
     type: "Part-time",
     highlights: [
-      "Build and maintain n8n workflows that automate everyday client operations",
+      "Build n8n workflows for messaging, applicant screening, and job alerts using Gemini and external APIs",
       "Develop web applications from user interface to backend services and databases",
       "Create automated content pipelines for scheduled publishing across client accounts",
       "Manage projects from requirements gathering through production deployment",
@@ -114,9 +114,9 @@ export const experience = [
   },
 ];
 export const skillTags = {
-  Languages: ["C#", "Python", "JavaScript", "SQL", "C++", "PHP", "Java"],
-  "Web & Frameworks": ["ASP.NET Core", "EF Core", "React", "Node.js", "Express.js", "Tailwind CSS", "FastAPI", "HTML/CSS"],
-  "Databases & Tools": ["SQL Server", "MySQL", "Oracle DB", "Git", "GitHub", "Postman", "Docker"],
+  Languages: ["TypeScript", "JavaScript", "Python", "SQL", "C++", "C#", "PHP", "Java"],
+  "Web & Frameworks": ["React", "Next.js", "FastAPI", "Node.js", "Express.js", "Tailwind CSS", "ASP.NET Core", "EF Core", "HTML/CSS"],
+  "Databases & Tools": ["PostgreSQL", "MongoDB", "SQLite", "MySQL", "SQL Server", "Oracle DB", "Git", "GitHub", "Postman", "Docker"],
   "ML & AI": ["TensorFlow", "scikit-learn", "DenseNet121", "EfficientNet-B3", "NLP", "PCA", "Grad-CAM", "OpenCV", "Gemini AI", "RAG"],
   "Automation & DevOps": ["GitHub Actions", "n8n", "Streamlit", "Telegram API", "Google Sheets API"],
 };
@@ -131,7 +131,7 @@ export const projects = [
     color: "indigo",
     live: null,
     github: "https://github.com/TakbirZaman/PolyGrep",
-    featured: true,
+    featured: false,
   },
   {
     title: "ByteSpace: Course Platform Front End",
@@ -142,7 +142,7 @@ export const projects = [
     color: "teal",
     live: "https://bytespace-lime-phi.vercel.app",
     github: "https://github.com/TakbirZaman/bytespace-new",
-    featured: true,
+    featured: false,
     image: byteSpaceImg,
   },
   {
@@ -154,7 +154,7 @@ export const projects = [
     color: "violet",
     live: null,
     github: "https://github.com/TakbirZaman/Coding-Agent",
-    featured: true,
+    featured: false,
   },
   {
     title: "TechCommerce: AI E-Commerce Platform",
@@ -167,6 +167,31 @@ export const projects = [
     github: "https://github.com/TakbirZaman/TechCommerce",
     featured: true,
     image: techCommerceImg,
+    caseStudy: {
+      "rank": 1,
+      "kind": "Personal project",
+      "status": "Source + web demo",
+      "problem": "Help shoppers explore technical products, compare specifications, and assemble compatible PC components in one place.",
+      "contribution": "Built the Next.js storefront and FastAPI services for product discovery, shopping workflows, and administration.",
+      "decision": "Keep customer and administrator permissions in backend authorization checks. Hiding admin controls in the interface alone cannot protect API endpoints.",
+      "result": "A storefront and administration workflow with repository tests covering access control, token rejection, and audit logging.",
+      "limit": "The public preview is for exploration. Do not enter payment details or place real orders. No customer or revenue claims are made.",
+      "evidence": [
+            {
+                  "label": "Authorization and audit tests",
+                  "url": "https://github.com/TakbirZaman/TechCommerce/blob/main/tests/test_admin_security.py"
+            },
+            {
+                  "label": "Setup and API documentation",
+                  "url": "https://github.com/TakbirZaman/TechCommerce#quick-start-3-steps"
+            }
+      ],
+      "walkthrough": [
+            "Browse products and compare their specifications.",
+            "Open the PC builder to explore compatibility checks.",
+            "Review the authorization tests and API documentation for backend implementation details."
+      ]
+},
   },
   {
     title: "Construction Tracker",
@@ -177,7 +202,7 @@ export const projects = [
     color: "teal",
     live: "https://construction-tracker-7cy9.onrender.com/",
     github: "https://github.com/TakbirZaman/Construction-Tracker",
-    featured: true,
+    featured: false,
     image: constructionTrackerImg,
   },
   {
@@ -189,7 +214,7 @@ export const projects = [
     color: "teal",
     live: "https://ridepricebd.netlify.app",
     github: "https://github.com/TakbirZaman/RidePriceBD",
-    featured: true,
+    featured: false,
     image: ridePriceImg,
   },
   {
@@ -201,7 +226,7 @@ export const projects = [
     color: "indigo",
     live: "https://task-manager-takbirzamans-projects.vercel.app/",
     github: "https://github.com/TakbirZaman/Task-Manager",
-    featured: true,
+    featured: false,
     image: taskManagerImg,
   },
   {
@@ -215,6 +240,31 @@ export const projects = [
     github: "https://github.com/TakbirZaman/Air-Canvas",
     featured: true,
     image: airCanvasImg,
+    caseStudy: {
+      "rank": 3,
+      "kind": "Personal project",
+      "status": "Interactive web demo",
+      "problem": "Turn webcam hand movements into a drawing interface with persistent strokes and predictable gesture controls.",
+      "contribution": "Built the hand-tracking interface, gesture controls, stroke smoothing, undo behavior, and PNG export.",
+      "decision": "Separate the video, drawing, and cursor into three canvas layers so refreshing the webcam feed does not erase strokes. Store strokes as data to support undo.",
+      "result": "Four documented gestures control drawing, erasing, undo, and clearing. The interface includes tracking confidence and frame-rate telemetry.",
+      "limit": "Requires camera permission and a supported browser. Tracking depends on lighting and hardware; no fixed FPS performance claim is made.",
+      "evidence": [
+            {
+                  "label": "Rendering and gesture design",
+                  "url": "https://github.com/TakbirZaman/Air-Canvas#how-it-works"
+            },
+            {
+                  "label": "Local setup instructions",
+                  "url": "https://github.com/TakbirZaman/Air-Canvas#setup"
+            }
+      ],
+      "walkthrough": [
+            "Open the demo and allow camera access.",
+            "Pinch to draw, use an open palm to erase, and use a peace sign to undo.",
+            "Save the drawing as a PNG."
+      ]
+},
   },
   {
     title: "Dhaka Traffic Predictor",
@@ -283,7 +333,7 @@ export const projects = [
     color: "amber",
     live: null,
     github: "https://github.com/TakbirZaman/Car-Drift",
-    featured: true,
+    featured: false,
     image: apexDriftImg,
   },
   {
@@ -331,8 +381,33 @@ export const projects = [
     color: "amber",
     live: null,
     github: "https://github.com/TakbirZaman/hook-desk",
-    featured: false,
+    featured: true,
     image: hookDeskImg,
+    caseStudy: {
+      "rank": 2,
+      "kind": "Personal project",
+      "status": "Runnable locally",
+      "problem": "Keep webhook delivery recoverable when a downstream service is unavailable or a sender retries the same event.",
+      "contribution": "Built a signed webhook ingestion API, a persistent SQLite event queue, and a background delivery worker with retry and inspection tools.",
+      "decision": "Persist an event before acknowledging it, then deliver asynchronously. Use at-least-once delivery and stable event IDs; downstream consumers must still tolerate duplicates.",
+      "result": "Repository tests cover duplicate ingestion, invalid signatures, transient retry failures, permanent errors, and delivery status transitions.",
+      "limit": "Designed for one process with SQLite. Multiple replicas require a different queue or storage strategy; delivery is not exactly-once.",
+      "evidence": [
+            {
+                  "label": "Delivery and retry tests",
+                  "url": "https://github.com/TakbirZaman/hook-desk/blob/main/tests/test_worker.py"
+            },
+            {
+                  "label": "Signature and deduplication tests",
+                  "url": "https://github.com/TakbirZaman/hook-desk/blob/main/tests/test_api.py"
+            }
+      ],
+      "walkthrough": [
+            "Follow the README quickstart to run the API locally.",
+            "Send a signed sample event with the bundled CLI.",
+            "Inspect events and retry behavior through the documented admin API."
+      ]
+},
   },
   {
     title: "ClientFlow: Freelancer Client Ops",
@@ -359,25 +434,25 @@ export const research = [
   },
   {
     title: "Explainable Osteoporosis Detection System",
-    description: "Developed an osteoporosis detection model using DenseNet121 and SE attention, achieving 87.5% recall. Used Grad-CAM to visualize the image regions contributing to each prediction.",
+    description: "Developed an osteoporosis detection model using DenseNet121 and SE attention. Used Grad-CAM to visualize the image regions contributing to each prediction.",
     tags: ["DenseNet121", "Grad-CAM", "XAI"],
-    metrics: { recall: "87.5%" },
+    metrics: { architecture: "DenseNet121", explanation: "Grad-CAM" },
     status: "Research Project",
     icon: "🩻",
   },
   {
     title: "Waste Image Classification Using EfficientNet-B3",
-    description: "Compared image classification architectures on a shared waste dataset and selected EfficientNet-B3, which achieved 94% accuracy.",
+    description: "Compared image classification architectures on a shared waste dataset using transfer learning with EfficientNet-B3.",
     tags: ["EfficientNet-B3", "Transfer Learning"],
-    metrics: { accuracy: "94%" },
+    metrics: { architecture: "EfficientNet-B3", approach: "Transfer learning" },
     status: "Research Project",
     icon: "♻️",
   },
   {
     title: "Brain Tumor Segmentation & Classification",
-    description: "Developed a deep learning model for brain tumor segmentation and classification in MRI scans, achieving 95.6% classification accuracy.",
+    description: "Developed a deep learning model for brain tumor segmentation and classification in MRI scans.",
     tags: ["Deep Learning", "MRI"],
-    metrics: { accuracy: "95.6%" },
+    metrics: { modality: "MRI", task: "Classification + segmentation" },
     status: "Research Project",
     icon: "🧠",
   },

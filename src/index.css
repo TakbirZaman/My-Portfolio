@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 @layer base {
+  section[id] { scroll-margin-top: 5rem; }
+
   html {
     scroll-behavior: smooth;
   }
