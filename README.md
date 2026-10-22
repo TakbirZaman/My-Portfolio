@@ -30,6 +30,6 @@ npm run preview
 - Case studies: the `caseStudy` objects include supporting source links. Links point to repository evidence; they do not imply those projects' tests were rerun during a portfolio update.
 - Keep exactly three selected projects with a unique case-study rank.
 - Add performance, usage, or research scores only when a measurement method and supporting report can be linked. Method descriptions remain visible when evaluation reports are not published.
-- Resume: install Python `reportlab` and DejaVu Sans fonts (set `RESUME_FONT_DIR` if needed), edit `scripts/build_resume.py`, then run `python scripts/build_resume.py`. Render and review the PDF before committing.
+- Resume: `public/TakbirZamanBhuiyan_Resume.pdf` preserves the approved uploaded format. Install Python `PyMuPDF` and run `python scripts/build_resume.py` to synchronize the BSc dates to 2022–2026 without rebuilding the layout. Render and review any wording or layout edits before committing.
 - LinkedIn drafts: `docs/recruiter-profile.md`. Posting those drafts is a separate account action.
 - Local test credentials from project repositories are not published as public demo credentials. Do not use live previews for real purchases.
