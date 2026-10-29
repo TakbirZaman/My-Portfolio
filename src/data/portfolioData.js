@@ -123,6 +123,50 @@ export const skillTags = {
 
 export const projects = [
   {
+    title: "DocuMind: Chat with Your PDFs",
+    description:
+      "A document question-answering application with PDF uploads, text chunking, semantic search, and streaming answers with source references. Combines a Next.js frontend with an Express backend, MongoDB, and OpenAI embeddings for retrieval-augmented generation.",
+    tech: ["Next.js", "Express", "MongoDB", "OpenAI", "RAG", "Docker"],
+    category: "AI/ML",
+    color: "violet",
+    live: null,
+    github: "https://github.com/TakbirZaman/DocuMind",
+    featured: false,
+  },
+  {
+    title: "Attendly: Workforce & Payroll Management",
+    description:
+      "A multi-tenant HR management backend for employee attendance, shifts, overtime, leave approvals, and payroll calculation. Includes organization roles, payslips, database migrations, and API tests, built with FastAPI and PostgreSQL.",
+    tech: ["Python", "FastAPI", "PostgreSQL", "Alembic", "Redis"],
+    category: "Backend",
+    color: "teal",
+    live: null,
+    github: "https://github.com/TakbirZaman/Attendly-Workforce-Payroll-OS",
+    featured: false,
+  },
+  {
+    title: "CV Screener: Recruitment Platform",
+    description:
+      "A recruitment platform in development with organization, team, and user management, role-based access, JWT authentication, invitations, and password resets. Uses PostgreSQL and Redis; resume upload and AI matching are still in progress.",
+    tech: ["Python", "FastAPI", "PostgreSQL", "Redis", "JWT", "Docker"],
+    category: "Backend",
+    color: "indigo",
+    live: null,
+    github: "https://github.com/TakbirZaman/CV-Scanner",
+    featured: false,
+  },
+  {
+    title: "Online Quiz System: Project Contribution",
+    description:
+      "A contribution repository for a PHP and MySQL quiz application with student and administrator roles. Supports quiz creation, multiple-choice questions, timed attempts with automatic submission, and immediate scoring with correct and incorrect answer breakdowns.",
+    tech: ["PHP", "MySQL", "JavaScript", "HTML", "CSS"],
+    category: "Full Stack",
+    color: "amber",
+    live: null,
+    github: "https://github.com/TakbirZaman/Quiz-Contribution",
+    featured: false,
+  },
+  {
     title: "PolyGrep: Multithreaded Code Search Engine",
     description:
       "A C++17 code search engine with a bounded thread pool, Boyer–Moore–Horspool and regex matching, word frequency analysis, live statistics, and cancellation. Includes a CLI and desktop interfaces in Qt 6, MFC, WPF, and WinForms, with CMake builds, automated tests, and Windows releases.",
