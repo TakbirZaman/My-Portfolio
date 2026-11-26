@@ -115,10 +115,11 @@ test("recruiter journey and email fallback", async () => {
     await act(async () => root.render(React.createElement(Hero)));
     assert(document.body.textContent.includes("Junior Full-Stack Developer"));
     assert(document.querySelector('a[href="#contact"]'));
-    assert.equal(
-      document.querySelector("a[download]").getAttribute("href"),
-      "/TakbirZamanBhuiyan_Resume.pdf",
-    );
+    const resumeLink = document.querySelector("a[aria-label=\"Download resume PDF\"]");
+    assert(resumeLink, "Resume download link exists");
+    assert.equal(resumeLink.getAttribute("href"), "/TakbirZamanBhuiyan_Resume.pdf");
+    assert.equal(resumeLink.getAttribute("download"), "TakbirZamanBhuiyan_Resume.pdf");
+    assert.equal(resumeLink.hasAttribute("target"), false);
     await act(async () => root.render(React.createElement(Contact)));
     const submit = async () => {
       await act(async () =>
