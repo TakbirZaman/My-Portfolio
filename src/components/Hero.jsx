@@ -67,11 +67,10 @@ export default function Hero() {
                 Explore Selected Work
                 <ArrowDown size={16} />
               </a>
-              <a 
-                href={personalInfo.resumeUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                download
+              <a
+                href={personalInfo.resumeUrl}
+                download="TakbirZamanBhuiyan_Resume.pdf"
+                type="application/pdf"
                 aria-label="Download resume PDF"
                 className="btn-outline"
               >
