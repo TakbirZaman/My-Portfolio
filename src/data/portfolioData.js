@@ -88,7 +88,7 @@ export const experience = [
     role: "AI Automation & Full-Stack Developer",
     company: "WebtrixLab",
     location: "Dhaka, Bangladesh",
-    period: "2025 to Present",
+    period: "June 2026 to Present",
     type: "Part-time",
     highlights: [
       "Build n8n workflows for messaging, applicant screening, and job alerts using Gemini and external APIs",
